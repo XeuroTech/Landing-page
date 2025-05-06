@@ -1,11 +1,16 @@
 import React from 'react'
+import ReflectBlog from '../Components/ReflectBlog'
+import { Box, Container } from '@mui/material'
+import AllTags from '../Components/AllTags'
 
 const Home = () => {
   return (
-    <div>
-      Home
-      Home
-    </div>
+
+    <Container  >
+      <ReflectBlog/>
+      <AllTags/>
+
+      </Container>
   )
 }
 
