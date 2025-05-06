@@ -96,7 +96,7 @@ const AllTags = () => {
   ];
 
   return (
-    <Paper elevation={0} sx={{ p: 2 }}>
+    <Paper elevation={0} sx={{ p: 2 ,bgcolor: "rgba(8,6,36,1)"}}>
    <AppBar position="static" color="primary"   elevation={0} sx={{ userSelect: 'none', }}>
   <Toolbar sx={{ bgcolor: "rgba(8,6,36,1)", color: 'white' }}>
     <Tabs
@@ -156,9 +156,16 @@ const AllTags = () => {
           borderRadius: 2,
           boxShadow: 3,
           overflow: 'hidden',
+          xs:{
+            justifyContent:'center',
+            alignItems:'center',
+            px:0,
+            mx:0,
+          },
           transition: 'transform 0.3s',
           '&:hover': {
-            transform: 'translateY(-4px)'
+            transform: 'translateY(-4px)',
+          
           }
         }}>
           <CardMedia
@@ -171,11 +178,12 @@ const AllTags = () => {
               width: '100%'
             }}
           />
-          <Stack spacing={1} sx={{ p: 2 }}>
+          <Stack spacing={1} p={2} >
             <Box sx={{ 
               display: 'flex',
               justifyContent: 'space-between',
-              alignItems: 'center'
+              alignItems: 'center', 
+              
             }}>
               <Typography 
                 variant="body2" 

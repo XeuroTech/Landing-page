@@ -14,7 +14,7 @@ const ReflectBlog = () => {
   const theme = useTheme();
 
   return (
-      <Box>
+      <Box sx={{px:9, py:6}}>
       <Typography 
         variant="h4" 
         sx={{ 
@@ -26,7 +26,14 @@ const ReflectBlog = () => {
         Reflect Blog
       </Typography>
       
-      <Typography variant="body1" sx={{ mb: 3, color: 'black' }}>
+      <Typography variant="body1" sx={{ mb: 3, color: 'white', width:"70%" ,xs:{
+        width:"100%",
+        textAlign:'center'
+      },
+
+      sm:{
+       width:'100%'
+      } }}>
         Learn how to think better by taking notes. Improve your note-taking with AI, learn new workflows, and see how notable founders and builders setup their work environments.
       </Typography>
       </Box>

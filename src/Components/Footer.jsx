@@ -52,7 +52,7 @@ const Footer = () => {
             }}>
                 <Box
                     component='img'
-                    src={twitter}
+                     src={twitter}
                     sx={{
                         height: { xs: 24, md: 28 },
                         width: 'auto',

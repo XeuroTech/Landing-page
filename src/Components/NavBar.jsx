@@ -7,12 +7,16 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/material/styles';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 import navlogo from '../assets/navlogo.png';
 
 function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    // Styled button with gradient background
     const GradientButton = styled(Button)(({ theme }) => ({
         background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
         color: theme.palette.common.white,
@@ -28,6 +32,37 @@ function Navbar() {
         setMobileOpen(!mobileOpen);
     };
 
+    const drawer = (
+        <Box sx={{ 
+            width: 250,
+            background: 'rgba(8, 6, 36, 1)',
+            height: '100%',
+            color: 'white'
+        }}>
+            <List>
+                {['Product', 'Pricing', 'Company', 'Blog', 'Changelog'].map((text) => (
+                    <ListItem key={text} disablePadding>
+                        <ListItemButton>
+                            <ListItemText primary={text} />
+                        </ListItemButton>
+                    </ListItem>
+                ))}
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <ListItemText primary="Login" />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton>
+                        <GradientButton fullWidth>
+                            Start free trial
+                        </GradientButton>
+                    </ListItemButton>
+                </ListItem>
+            </List>
+        </Box>
+    );
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{
@@ -35,8 +70,8 @@ function Navbar() {
                 boxShadow: 'none',
                 paddingX: { xs: 2, sm: 4, md: 6 }
             }}>
-                <Toolbar>
-                    {/* Mobile menu button (hidden on desktop) */}
+                <Toolbar sx={{ minHeight: { xs: 56, sm: 64 } }}>
+                    {/* Mobile menu button */}
                     <IconButton
                         size="large"
                         edge="start"
@@ -51,9 +86,9 @@ function Navbar() {
                         <MenuIcon />
                     </IconButton>
 
-                    {/* Left side - Logo with text */}
+                    {/* Logo with text */}
                     <Box sx={{
-                        flexGrow: 1,
+                        flexGrow: { xs: 1, sm: 0 },
                         display: 'flex',
                         alignItems: 'center',
                         gap: 2,
@@ -72,34 +107,41 @@ function Navbar() {
                             component="div"
                             sx={{
                                 fontWeight: 'bold',
-                                fontSize: { xs: '1rem', sm: '1.25rem' }
+                                fontSize: { xs: '1rem', sm: '1.25rem' },
+                                display: { xs: 'none', sm: 'block' }
                             }}
                         >
                             Reflect
                         </Typography>
                     </Box>
 
-                    {/* Middle - Navigation buttons (hidden on mobile) */}
+                    {/* Navigation links - desktop */}
                     <Box sx={{
                         display: { xs: 'none', sm: 'flex' },
                         justifyContent: 'center',
                         flexGrow: 1,
-                        gap: { sm: 1, md: 2, lg: 4 }
+                        gap: { sm: 1, md: 2, lg: 4 },
+                        mx: 2
                     }}>
-                        <Button color="inherit" sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}>Product</Button>
-                        <Button color="inherit" sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}>Pricing</Button>
-                        <Button color="inherit" sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}>Company</Button>
-                        <Button color="inherit" sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}>Blog</Button>
-                        <Button color="inherit" sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}>Changelog</Button>
+                        {['Product', 'Pricing', 'Company', 'Blog', 'Changelog'].map((item) => (
+                            <Button 
+                                key={item}
+                                color="inherit" 
+                                sx={{ 
+                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    whiteSpace: 'nowrap'
+                                }}
+                            >
+                                {item}
+                            </Button>
+                        ))}
                     </Box>
 
-                    {/* Right side - Login/Logout button (hidden on mobile) */}
+                    {/* Right side buttons - desktop */}
                     <Box sx={{
-                        flexGrow: 1,
                         display: { xs: 'none', sm: 'flex' },
-                        justifyContent: 'flex-end',
                         alignItems: 'center',
-                        minWidth: { xs: 'auto', sm: '160px' }
+                        gap: 1
                     }}>
                         <Button
                             color="inherit"
@@ -112,25 +154,47 @@ function Navbar() {
                             size="small"
                             sx={{
                                 fontSize: { sm: '0.8rem', md: '0.9rem' },
-                                padding: { sm: '4px 8px', md: '6px 16px' }
+                                padding: { sm: '6px 12px', md: '8px 16px' }
                             }}
                         >
                             Start free trial
                         </GradientButton>
                     </Box>
 
-                    {/* Mobile login button (hidden on desktop) */}
+                    {/* Mobile login button */}
                     <Button
                         color="inherit"
                         sx={{
                             display: { xs: 'block', sm: 'none' },
-                            minWidth: 'auto'
+                            minWidth: 'auto',
+                            ml: 'auto'
                         }}
                     >
                         Login
                     </Button>
                 </Toolbar>
             </AppBar>
+
+            {/* Mobile drawer */}
+            <Drawer
+                variant="temporary"
+                open={mobileOpen}
+                onClose={handleDrawerToggle}
+                ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                }}
+                sx={{
+                    display: { xs: 'block', sm: 'none' },
+                    '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
+                        width: 250,
+                        background: 'rgba(8, 6, 36, 1)',
+                        color: 'white'
+                    },
+                }}
+            >
+                {drawer}
+            </Drawer>
         </Box>
     );
 }
