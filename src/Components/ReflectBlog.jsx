@@ -26,7 +26,7 @@ const ReflectBlog = () => {
         Reflect Blog
       </Typography>
       
-      <Typography variant="body1" sx={{ mb: 3, color: 'white' }}>
+      <Typography variant="body1" sx={{ mb: 3, color: 'black' }}>
         Learn how to think better by taking notes. Improve your note-taking with AI, learn new workflows, and see how notable founders and builders setup their work environments.
       </Typography>
       </Box>
