@@ -13,9 +13,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import navlogo from '../assets/navlogo.png';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+    const [Token, settoken] = React.useState(true); // Set to true for testing
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const navigate = useNavigate();
 
     const GradientButton = styled(Button)(({ theme }) => ({
         background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
@@ -30,6 +33,18 @@ function Navbar() {
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
+    };
+
+    const handleLoginClick = () => {
+        navigate('/login');
+    };
+
+    const handleAccountClick = () => {
+        navigate('/createaccount');
+    };
+
+    const handleTrialClick = () => {
+        settoken(false);
     };
 
     const drawer = (
@@ -48,15 +63,21 @@ function Navbar() {
                     </ListItem>
                 ))}
                 <ListItem disablePadding>
-                    <ListItemButton>
+                    <ListItemButton onClick={handleLoginClick}>
                         <ListItemText primary="Login" />
                     </ListItemButton>
                 </ListItem>
                 <ListItem disablePadding>
                     <ListItemButton>
-                        <GradientButton fullWidth>
-                            Start free trial
-                        </GradientButton>
+                        {Token ? (
+                            <GradientButton fullWidth onClick={handleTrialClick}>
+                                Start free trial
+                            </GradientButton>
+                        ) : (
+                            <GradientButton fullWidth onClick={handleAccountClick}>
+                                Create Account
+                            </GradientButton>
+                        )}
                     </ListItemButton>
                 </ListItem>
             </List>
@@ -143,27 +164,44 @@ function Navbar() {
                         alignItems: 'center',
                         gap: 1
                     }}>
-                        <Button
+                        <Button 
+                            onClick={handleLoginClick}
                             color="inherit"
                             sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}
                         >
                             Login
                         </Button>
-                        <GradientButton
-                            variant="contained"
-                            size="small"
-                            sx={{
-                                fontSize: { sm: '0.8rem', md: '0.9rem' },
-                                padding: { sm: '6px 12px', md: '8px 16px' }
-                            }}
-                        >
-                            Start free trial
-                        </GradientButton>
+                        {Token ? (
+                            <GradientButton
+                                variant="contained"
+                                size="small"
+                                onClick={handleTrialClick}
+                                sx={{
+                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    padding: { sm: '6px 12px', md: '8px 16px' }
+                                }}
+                            >
+                                Start free trial
+                            </GradientButton>
+                        ) : (
+                            <GradientButton
+                                variant="contained"
+                                size="small"
+                                onClick={handleAccountClick}
+                                sx={{
+                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    padding: { sm: '6px 12px', md: '8px 16px' }
+                                }}
+                            >
+                                Create Account
+                            </GradientButton>
+                        )}
                     </Box>
 
                     {/* Mobile login button */}
-                    <Button
+                    <Button 
                         color="inherit"
+                        onClick={handleLoginClick}
                         sx={{
                             display: { xs: 'block', sm: 'none' },
                             minWidth: 'auto',
@@ -181,7 +219,7 @@ function Navbar() {
                 open={mobileOpen}
                 onClose={handleDrawerToggle}
                 ModalProps={{
-                    keepMounted: true, // Better open performance on mobile.
+                    keepMounted: true,
                 }}
                 sx={{
                     display: { xs: 'block', sm: 'none' },
