@@ -14,7 +14,7 @@ const ReflectBlog = () => {
   const theme = useTheme();
 
   return (
-      <Box sx={{px:9, py:6}}>
+      <Box sx={{px:9, py:6, bgcolor:"rgba(8,6,36,1)"}}>
       <Typography 
         variant="h4" 
         sx={{ 

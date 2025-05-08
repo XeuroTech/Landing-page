@@ -8,15 +8,15 @@ import Footer from '../Components/Footer'
 
 const Home = () => {
   return (
-    <Box sx={{ backgroundColor: "rgba(8,6,36,1)", height: "100vh", }}>
-      <Container sx={{ bgcolor: "rgba(8,6,36,1)" }} >
-        <Navbar />
+    
+      <>        <Navbar />
         <ReflectBlog />
         <AllTags />
         <Newjoin />
         <Footer />
-      </Container>
-    </Box>
+     
+        </>
+
   )
 }
 

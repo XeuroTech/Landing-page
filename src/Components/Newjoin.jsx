@@ -20,8 +20,8 @@ const Newjoin = () => {
              bgcolor: "rgba(8,6,36,1)", 
             alignItems: "center", 
             width: "100%",
-            py: 6,
-            px: 2
+         
+            
         }}>
             <Typography variant='h3' color='white' sx={{ mb: 3 }}>Join Our Newsletter</Typography>
             <Box sx={{ 
@@ -30,7 +30,7 @@ const Newjoin = () => {
                 alignItems: 'center', 
                 gap: 3,
                 width: '100%',
-                maxWidth: '800px',
+                maxWidth: '100%',
                 justifyContent: 'center'
             }}>
                 <TextField 
