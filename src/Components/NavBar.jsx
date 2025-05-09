@@ -46,43 +46,69 @@ function Navbar() {
     const handleTrialClick = () => {
         settoken(false);
     };
-
     const drawer = (
-        <Box sx={{ 
-            width: 250,
-            background: 'rgba(8, 6, 36, 1)',
-            height: '100%',
-            color: 'white'
-        }}>
-            <List>
-                {['Product', 'Pricing', 'Company', 'Blog', 'Changelog'].map((text) => (
-                    <ListItem key={text} disablePadding>
-                        <ListItemButton>
-                            <ListItemText primary={text} />
+        <Box
+            sx={{
+                width: '100%',
+                background: 'rgba(8, 6, 36, 1)',
+                height: '100vh',
+                color: 'white',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                px: 2,
+                py: 3,
+            }}
+        >
+            {/* Top: Navigation Items + Login */}
+            <Box>
+                <List>
+                    {['Product', 'Pricing', 'Company', 'Blog', 'Changelog'].map((text) => (
+                        <ListItem key={text} disablePadding sx={{ mb: 1 }}>
+                            <ListItemButton>
+                                <ListItemText primary={text} />
+                            </ListItemButton>
+                        </ListItem>
+                    ))}
+                    <ListItem disablePadding sx={{ mb: 1 }}>
+                        <ListItemButton onClick={handleLoginClick}>
+                            <ListItemText primary="Login" />
                         </ListItemButton>
                     </ListItem>
-                ))}
-                <ListItem disablePadding>
-                    <ListItemButton onClick={handleLoginClick}>
-                        <ListItemText primary="Login" />
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding>
-                    <ListItemButton>
-                        {Token ? (
-                            <GradientButton fullWidth onClick={handleTrialClick}>
-                                Start free trial
-                            </GradientButton>
-                        ) : (
-                            <GradientButton fullWidth onClick={handleAccountClick}>
-                                Create Account
-                            </GradientButton>
-                        )}
-                    </ListItemButton>
-                </ListItem>
-            </List>
+                </List>
+            </Box>
+
+            {/* Bottom: Start Free Trial / Create Account */}
+            <Box sx={{ mt: 2 }}>
+                {Token ? (
+                    <GradientButton
+                        fullWidth
+                        onClick={handleTrialClick}
+                        sx={{
+                            textTransform: 'none',
+                            fontWeight: 500,
+                            py: 1.5,
+                        }}
+                    >
+                        Start free trial
+                    </GradientButton>
+                ) : (
+                    <GradientButton
+                        fullWidth
+                        onClick={handleAccountClick}
+                        sx={{
+                            textTransform: 'none',
+                            fontWeight: 500,
+                            py: 1.5,
+                        }}
+                    >
+                        Create Account
+                    </GradientButton>
+                )}
+            </Box>
         </Box>
     );
+
 
     return (
         <Box sx={{ flexGrow: 1 }}>
@@ -145,10 +171,10 @@ function Navbar() {
                         mx: 2
                     }}>
                         {['Product', 'Pricing', 'Company', 'Blog', 'Changelog'].map((item) => (
-                            <Button 
+                            <Button
                                 key={item}
-                                color="inherit" 
-                                sx={{ 
+                                color="inherit"
+                                sx={{
                                     fontSize: { sm: '0.8rem', md: '0.9rem' },
                                     whiteSpace: 'nowrap'
                                 }}
@@ -164,7 +190,7 @@ function Navbar() {
                         alignItems: 'center',
                         gap: 1
                     }}>
-                        <Button 
+                        <Button
                             onClick={handleLoginClick}
                             color="inherit"
                             sx={{ fontSize: { sm: '0.8rem', md: '0.9rem' } }}
@@ -178,18 +204,20 @@ function Navbar() {
                                 onClick={handleTrialClick}
                                 sx={{
                                     fontSize: { sm: '0.8rem', md: '0.9rem' },
-                                    padding: { sm: '6px 12px', md: '8px 16px' }
+                                    padding: { sm: '6px 12px', md: '8px 16px' },
+                                    display: { xs: 'none', md: 'inline-flex' }  // 👈 This hides it on small screens
                                 }}
                             >
                                 Start free trial
                             </GradientButton>
+
                         ) : (
                             <GradientButton
                                 variant="contained"
                                 size="small"
                                 onClick={handleAccountClick}
                                 sx={{
-                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    fontSize: { sm: '0.8rem', md: '0.9rem', lg: '10px' },
                                     padding: { sm: '6px 12px', md: '8px 16px' }
                                 }}
                             >
@@ -199,7 +227,7 @@ function Navbar() {
                     </Box>
 
                     {/* Mobile login button */}
-                    <Button 
+                    <Button
                         color="inherit"
                         onClick={handleLoginClick}
                         sx={{
@@ -209,6 +237,18 @@ function Navbar() {
                         }}
                     >
                         Login
+                    </Button>
+                    {/* Mobile Create Account button */}
+                    <Button
+                        color="inherit"
+                        onClick={handleLoginClick}
+                        sx={{
+                            display: { xs: 'block', sm: 'none' },
+                            minWidth: 'auto',
+                            ml: 'auto'
+                        }}
+                    >
+                        Create Account
                     </Button>
                 </Toolbar>
             </AppBar>

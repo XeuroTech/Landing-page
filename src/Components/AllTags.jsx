@@ -346,22 +346,22 @@ const AllTags = () => {
   ];
 
   return (
-    <Paper elevation={0} sx={{display:"flex",flexDirection:"column", justifyContent:"center",  alignItems:"center", bgcolor: "rgba(8,6,36,1)" }}>
+    <Paper elevation={0} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", bgcolor: "rgba(8,6,36,1)" }}>
       <AppBar
         position="static"
-       
+
         color="primary"
         elevation={0}
-        sx={{ userSelect: "none",  }}
+        sx={{ userSelect: "none", }}
       >
-        <Toolbar sx={{ bgcolor: "rgba(8,6,36,1)", color: "white",}}>
+        <Toolbar sx={{ bgcolor: "rgba(8,6,36,1)", color: "white", }}>
           <Tabs
             value={value}
             onChange={handleChange}
             variant="scrollable"
             scrollButtons="auto"
             sx={{
-              px:6,
+              px: 6,
               "& .MuiTab-root": {
                 color: "white",
                 fontSize: "0.875rem",
@@ -391,7 +391,6 @@ const AllTags = () => {
                 key={index}
                 label={category.name}
                 sx={{
-                  
                   "&::first-letter": {
                     fontSize: "1.1rem",
                     fontWeight: "bold",
@@ -403,24 +402,21 @@ const AllTags = () => {
         </Toolbar>
       </AppBar>
       <Box sx={{ mt: 3 }}>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} sx={{ justifyContent: "center" }}>
+
           {categories[value].images.slice(0, visibleItems).map((image) => (
             <Grid item xs={12} sm={6} md={4} key={image.id}>
               <Card
                 sx={{
-                  width: "336px",
+                  width: "100%",
+                  maxWidth: "336px", // 👈 Responsive width
                   height: "auto",
                   display: "flex",
                   flexDirection: "column",
                   borderRadius: 2,
                   boxShadow: 3,
                   overflow: "hidden",
-                  xs: {
-                    justifyContent: "center",
-                    alignItems: "center",
-                    px: 0,
-                    mx: 0,
-                  },
+                  mx: "auto", // 👈 Center card horizontally
                   transition: "transform 0.3s",
                   "&:hover": {
                     transform: "translateY(-4px)",
@@ -496,4 +492,4 @@ const AllTags = () => {
   );
 };
 
-export default AllTags;
+export default AllTags
