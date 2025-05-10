@@ -5,9 +5,10 @@ import NoteSearchPage from './Pages/NoteSearchPage.jsx';
 import AuthForm from './Components/CreateAccount.jsx';
 import { Login } from './Components/Login.jsx';
 import AllNotes from './Components/NotePageComponents/AllNotes.jsx';
+import Mainpage from './Pages/Mainpage.jsx';
 function App() {
-  return (
-    <BrowserRouter>
+  return (<>
+    {/* <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/note' element={<NoteSearchPage />} />
@@ -15,7 +16,9 @@ function App() {
         <Route path='/createAccount' element={<AuthForm />} />
       </Routes>
     </BrowserRouter>
-    // <AllNotes />
+    <AllNotes /> */}
+    <Mainpage />
+  </>
   );
 }
 
