@@ -8,14 +8,15 @@ import Footer from '../Components/Footer'
 
 const Home = () => {
   return (
-    
-      <>        <Navbar />
-        <ReflectBlog />
-        <AllTags />
-        <Newjoin />
-        <Footer />
-     
-        </>
+
+    <>
+      <Navbar />
+      <ReflectBlog />
+      <AllTags />
+      <Newjoin />
+      <Footer />
+
+    </>
 
   )
 }
