@@ -402,21 +402,24 @@ const AllTags = () => {
         </Toolbar>
       </AppBar>
       <Box sx={{ mt: 3 }}>
-        <Grid container spacing={3} sx={{ justifyContent: "center" }}>
-
+        <Grid container spacing={3}>
           {categories[value].images.slice(0, visibleItems).map((image) => (
             <Grid item xs={12} sm={6} md={4} key={image.id}>
               <Card
                 sx={{
-                  width: "100%",
-                  maxWidth: "336px", // 👈 Responsive width
+                  width: "336px",
                   height: "auto",
                   display: "flex",
                   flexDirection: "column",
                   borderRadius: 2,
                   boxShadow: 3,
                   overflow: "hidden",
-                  mx: "auto", // 👈 Center card horizontally
+                  xs: {
+                    justifyContent: "center",
+                    alignItems: "center",
+                    px: 0,
+                    mx: 0,
+                  },
                   transition: "transform 0.3s",
                   "&:hover": {
                     transform: "translateY(-4px)",
