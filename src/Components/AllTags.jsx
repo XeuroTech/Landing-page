@@ -346,22 +346,22 @@ const AllTags = () => {
   ];
 
   return (
-    <Paper elevation={0} sx={{display:"flex",flexDirection:"column", justifyContent:"center",  alignItems:"center", bgcolor: "rgba(8,6,36,1)" }}>
+    <Paper elevation={0} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", bgcolor: "rgba(8,6,36,1)" }}>
       <AppBar
         position="static"
-       
+
         color="primary"
         elevation={0}
-        sx={{ userSelect: "none",  }}
+        sx={{ userSelect: "none", }}
       >
-        <Toolbar sx={{ bgcolor: "rgba(8,6,36,1)", color: "white",}}>
+        <Toolbar sx={{ bgcolor: "rgba(8,6,36,1)", color: "white", }}>
           <Tabs
             value={value}
             onChange={handleChange}
             variant="scrollable"
             scrollButtons="auto"
             sx={{
-              px:6,
+              px: 6,
               "& .MuiTab-root": {
                 color: "white",
                 fontSize: "0.875rem",
@@ -391,7 +391,6 @@ const AllTags = () => {
                 key={index}
                 label={category.name}
                 sx={{
-                  
                   "&::first-letter": {
                     fontSize: "1.1rem",
                     fontWeight: "bold",
@@ -403,81 +402,73 @@ const AllTags = () => {
         </Toolbar>
       </AppBar>
       <Box sx={{ mt: 3 }}>
-                    <Grid container spacing={{ xs: 2, sm: 3 }} sx={{ px: { xs: 2, sm: 3 } }}>
-                {categories[value].images.slice(0, visibleItems).map((image) => (
-                  <Grid item xs={12} sm={6} md={4} key={image.id} sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Card
+        <Grid container spacing={3}>
+          {categories[value].images.slice(0, visibleItems).map((image) => (
+            <Grid item xs={12} sm={6} md={4} key={image.id}>
+              <Card
+                sx={{
+                  width: "336px",
+                  height: "auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  borderRadius: 2,
+                  boxShadow: 3,
+                  overflow: "hidden",
+                  xs: {
+                    justifyContent: "center",
+                    alignItems: "center",
+                    px: 0,
+                    mx: 0,
+                  },
+                  transition: "transform 0.3s",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                  },
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="180"
+                  image={image.url}
+                  alt={image.title}
+                  sx={{
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
+                />
+                <Stack spacing={1} p={2}>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Typography
+                      variant="body2"
                       sx={{
-                        width: { xs: '100%', sm: '336px' }, // Full width on mobile, fixed width on larger screens
-                        maxWidth: '100%', // Ensure it doesn't overflow
-                        height: 'auto',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        borderRadius: 2,
-                        boxShadow: 3,
-                        overflow: 'hidden',
-                        transition: 'transform 0.3s',
-                        '&:hover': {
-                          transform: 'translateY(-4px)',
-                        },
+                        fontWeight: "medium",
+                        backgroundColor: "#1E40AF",
+                        color: "white",
+                        px: 1.5,
+                        py: 0.5,
+                        borderRadius: 12,
                       }}
                     >
-                      <CardMedia
-                        component="img"
-                        height={{ xs: 160, sm: 180 }} // Responsive image height
-                        image={image.url}
-                        alt={image.title}
-                        sx={{
-                          objectFit: 'cover',
-                          width: '100%',
-                        }}
-                      />
-                      <Stack spacing={1} p={2}>
-                        <Box
-                          sx={{
-                            display: 'flex',
-                            flexDirection: { xs: 'column', sm: 'row' }, // Stack on mobile, row on larger screens
-                            justifyContent: 'space-between',
-                            alignItems: { xs: 'flex-start', sm: 'center' },
-                            gap: 1,
-                          }}
-                        >
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              fontWeight: 'medium',
-                              backgroundColor: '#1E40AF',
-                              color: 'white',
-                              px: 1.5,
-                              py: 0.5,
-                              borderRadius: 12,
-                              width: 'fit-content',
-                            }}
-                          >
-                            {image.name}
-                          </Typography>
-                          <Typography 
-                            variant="body2" 
-                            color="text.secondary"
-                            sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' } }} // Responsive font size
-                          >
-                            {image.date}
-                          </Typography>
-                        </Box>
-                        <Typography 
-                          variant="body2" 
-                          sx={{ 
-                            fontWeight: 'medium',
-                            fontSize: { xs: '0.875rem', sm: '1rem' } // Responsive font size
-                          }}
-                        >
-                          {image.description}
-                        </Typography>
-                      </Stack>
-                    </Card>
-                  </Grid>
-                ))}
-              </Grid>
+                      {image.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {image.date}
+                    </Typography>
+                  </Box>
+                  <Typography variant="body2" sx={{ fontWeight: "medium" }}>
+                    {image.description}
+                  </Typography>
+                </Stack>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
         {categories[value].images.length > visibleItems && (
           <Box sx={{ display: "flex", justifyContent: "center", mt: 4 }}>
@@ -504,4 +495,4 @@ const AllTags = () => {
   );
 };
 
-export default AllTags;
+export default AllTags
