@@ -17,6 +17,7 @@
     "@mui/x-date-pickers": "^8.2.0",
     "@mui/x-date-pickers-pro": "^8.2.0",
     "dayjs": "^1.11.13",
+    "framer-motion": "^12.10.5",
     "material-ui-popup-state": "^5.3.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
