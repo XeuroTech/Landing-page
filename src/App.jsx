@@ -18,6 +18,8 @@ function App() {
     </BrowserRouter>
     <AllNotes /> */}
     <Mainpage />
+    {/* Implement page 1
+    */}
   </>
   );
 }
