@@ -12,7 +12,7 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
       sx={{
         width: 250,
         height: 128,
-        borderLeft:"1px solid wheat",
+        borderLeft: "1px solid wheat",
         minWidth: 170, // Add this to prevent flex-shrinking
         backgroundColor: 'black',
         color: 'white',
@@ -119,11 +119,6 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
   );
 };
 
-
-
-/////ridar 
-
-
 export const RadarBackground = styled('div')({
   position: 'absolute',
   width: '100%',
@@ -152,7 +147,7 @@ export const CardDiv = ({ children, elevation = 1, sx = {} }) => {
       sx={{
         width: 250,
         height: 128,
-        borderLeft:"1px solid wheat",
+        borderLeft: "1px solid wheat",
         minWidth: 170, // Add this to prevent flex-shrinking
         backgroundColor: 'transparent',
         color: 'white',

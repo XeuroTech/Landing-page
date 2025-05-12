@@ -2,7 +2,6 @@ import { Box, Button, styled, Typography } from "@mui/material";
 import React from "react";
 import reflectImage from "../../assets/mainPage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-
 const NotesIdea = () => {
   const CenteredDiv = styled(Box)(({ theme }) => ({
     width: "100%",
@@ -15,23 +14,21 @@ const NotesIdea = () => {
     boxSizing: "border-box",
     color: theme.palette.common.white,
   }));
-
   const CustomButton = styled(Button)(({ theme }) => ({
     backgroundColor: "transparent",
-    border: "1px solid #007aff",
+    border: "1px solid #007AFF",
     borderRadius: "32px",
     fontSize: "12px",
     textTransform: "none",
     padding: theme.spacing(1, 3),
-    color: "#007aff",
+    color: "#007AFF",
     "&:hover": {
       backgroundColor: "rgba(0, 122, 255, 0.1)",
       color: "white",
     },
   }));
-
   return (
-    <Box sx={{backgroundColor: "#030014"  }}>
+    <Box sx={{ backgroundColor: "#030014" }}>
       <Box
         sx={{
           height: "max-content",
@@ -49,7 +46,6 @@ const NotesIdea = () => {
           minHeight: "100vh",
           backgroundImage: `url(${reflectImage})`,
           backgroundSize: "cover",
-
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           padding: 2,
@@ -57,10 +53,10 @@ const NotesIdea = () => {
       >
         <CenteredDiv sx={{ gap: "10px" }}>
           <CenteredDiv>
-            <Typography variant="h3"> Think Better</Typography>
+            <Typography fontSize={43} variant="h3"> Think Better</Typography>
           </CenteredDiv>
           <CenteredDiv>
-            <Typography variant="h3">with Reflect</Typography>
+            <Typography fontSize={43} variant="h3">with Reflect</Typography>
           </CenteredDiv>
           <CenteredDiv sx={{ color: "#acabb1b1", fontSize: "20px" }}>
             Never miss a note ,idea or Connection
@@ -70,5 +66,4 @@ const NotesIdea = () => {
     </Box>
   );
 };
-
 export default NotesIdea;
