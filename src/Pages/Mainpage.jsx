@@ -13,18 +13,15 @@ import Navbar from '../Components/NavBar.jsx'
 
 
 const Mainpage = () => {
-    return(
+    return (
         <>
-           <NotesIdea />
-            <CardComponents/>
+            <NotesIdea />
+            <CardComponents />
             <AiAssistant />
-// <<<<<<< newUpdate
             <BrainPower />
             <Meeting />
-// =======
-            <CardForDetails/>
-            <FrictionThoughts/>
-// >>>>>>> main
+            <CardForDetails />
+            <FrictionThoughts />
         </>
     )
 }
