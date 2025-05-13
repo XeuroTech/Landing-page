@@ -1,8 +1,12 @@
-import { Box, Button, styled, Typography } from "@mui/material";
+import { Box, Button, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import reflectImage from "../../assets/mainPage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+
 const NotesIdea = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm && md"));
+
   const CenteredDiv = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "max-content",
@@ -14,19 +18,20 @@ const NotesIdea = () => {
     boxSizing: "border-box",
     color: theme.palette.common.white,
   }));
-  const CustomButton = styled(Button)(({ theme }) => ({
+
+  const CustomButton = styled(Button)(() => ({
     backgroundColor: "transparent",
-    border: "1px solid #007AFF",
+    border: "1px solid wheat",
+    color: "wheat",
     borderRadius: "32px",
     fontSize: "12px",
     textTransform: "none",
-    padding: theme.spacing(1, 3),
-    color: "#007AFF",
     "&:hover": {
       backgroundColor: "rgba(0, 122, 255, 0.1)",
-      color: "white",
+
     },
   }));
+
   return (
     <Box sx={{ backgroundColor: "#030014" }}>
       <Box
@@ -41,6 +46,7 @@ const NotesIdea = () => {
           Take notes using AI
         </CustomButton>
       </Box>
+
       <Box
         sx={{
           minHeight: "100vh",
@@ -51,19 +57,33 @@ const NotesIdea = () => {
           padding: 2,
         }}
       >
-        <CenteredDiv sx={{ gap: "10px" }}>
-          <CenteredDiv>
-            <Typography fontSize={43} variant="h3"> Think Better</Typography>
-          </CenteredDiv>
-          <CenteredDiv>
-            <Typography fontSize={43} variant="h3">with Reflect</Typography>
-          </CenteredDiv>
-          <CenteredDiv sx={{ color: "#acabb1b1", fontSize: "20px" }}>
-            Never miss a note ,idea or Connection
-          </CenteredDiv>
+        <CenteredDiv sx={{ gap: "10px", px: 2 }}>
+          <Typography
+            variant={isMobile ? "h4" : "h2"}
+            sx={{
+              maxWidth: "90%",
+              fontWeight: 600,
+              lineHeight: 1.2,
+              color: "white",
+            }}
+          >
+            Think better with Reflect
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#acabb1b1",
+              fontSize: { xs: "14px", sm: "16px" },
+              maxWidth: "90%",
+            }}
+          >
+            Never miss a note, idea, or connection
+          </Typography>
         </CenteredDiv>
       </Box>
     </Box>
   );
 };
+
 export default NotesIdea;

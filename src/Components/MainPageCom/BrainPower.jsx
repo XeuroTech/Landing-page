@@ -56,7 +56,7 @@ const BrainPower = () => {
                 </Button>
 
                 {/* Text below button */}
-                <Box sx={{ maxWidth: 700 }}>
+                <Box sx={{ maxWidth: 'max-content' }}>
                     <Typography
                         variant={isMobile ? 'h4' : 'h2'}
                         sx={{ color: 'white', mb: 2, fontWeight: 600 }}

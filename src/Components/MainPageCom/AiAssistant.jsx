@@ -1,4 +1,4 @@
-import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Container, Typography, Grid } from '@mui/material';
 import React from 'react';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import aiBackground from '../../assets/homepic/q-6c12dbae.png';
@@ -16,7 +16,7 @@ const AiAssistant = ({
     headerDescription2 = "organize your thoughts, and act as intellectual thought partner.",
     backgroundImage = aiBackground,
     cardTitle = "How to use AI to take better notes",
-    cardDescription = "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    cardDescription = ". Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     sectionTitle = "What can you do with Reflect AI?",
     features = [
         {
@@ -44,15 +44,19 @@ const AiAssistant = ({
             title: "Save your own",
             description: "custom prompts"
         }
+
     ]
 }) => {
+    //   const theme = useTheme();
+    //  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
     return (
         <Box sx={{ backgroundColor: "#030014", color: 'white' }}>
             {/* Header Section */}
             <Container sx={{ textAlign: 'center', py: { xs: 4, md: 8 } }}>
                 <Button
                     variant="outlined"
-                    startIcon={<AutoAwesomeIcon />}
+
                     sx={{
                         borderRadius: '32px',
                         color: '#007aff',
@@ -75,28 +79,32 @@ const AiAssistant = ({
             {/* Background Section with Card */}
             <Box
                 sx={{
-                    minHeight: '100vh',
+                    minHeight: '70vh',
                     backgroundImage: `url(${backgroundImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     display: 'flex',
-                    alignItems: 'center',
                     justifyContent: 'center',
-                    px: 2
+                    px: 2,
                 }}
             >
                 <Box sx={{
                     backgroundColor: 'rgba(255,255,255,0.1)',
                     backdropFilter: 'blur(10px)',
                     border: '1px solid rgba(255,255,255,0.2)',
-                    maxWidth: 500,
+                    width: 'max-content',
+                    height: 'max-content',
                     p: 4,
+                    mt: '6rem',
                     borderRadius: 3,
-                    textAlign: 'center'
+                    textAlign: 'start'
                 }}>
-                    <Typography variant="h6" gutterBottom>
-                        {cardTitle}
-                    </Typography>
+                    <Box sx={{ display: 'flex', gap: 5 }}>
+                        <Typography variant="h6" gutterBottom>
+                            {cardTitle}
+                        </Typography>
+                        <Button size='small' sx={{ fontSize: 10 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
+                    </Box>
                     <Typography>
                         {cardDescription}
                     </Typography>
@@ -110,26 +118,31 @@ const AiAssistant = ({
                 </Typography>
             </Container>
 
-            {/* Features Grid */}
-
             <Container sx={{ pb: 8 }}>
-                <Grid container spacing={16} justifyContent="center">
+                <Grid
+                    container
+                    spacing={6}
+                    justifyContent="center"
+                    alignItems="center"
+                >
                     {features.map((feature, index) => (
                         <Grid
                             item
                             xs={1}
                             sm={1}
                             md={1}
-                            lg={3} // 3 items on first row, 2 on second for lg
+                            lg={3}
                             key={index}
+                            sx={{ display: 'flex', justifyContent: 'center' }}
                         >
                             <Box
                                 sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    textAlign: "center",
                                     gap: 1.5,
+                                    p: 5
                                 }}
                             >
                                 {feature.icon}
@@ -140,6 +153,7 @@ const AiAssistant = ({
                     ))}
                 </Grid>
             </Container>
+
 
         </Box>
     );

@@ -37,16 +37,16 @@ const Meeting = () => {
                     px: 2, // padding for small screens
                 }}
             >
-                <Box sx={{ pt: { xs: '16rem', sm: '20rem', md: '25rem' }, maxWidth: 700 }}>
+                <Box sx={{ pt: { xs: '16rem', sm: '20rem', md: '25rem' }, maxWidth: 'max-content' }}>
                     <Typography
-                        variant={isMobile ? 'h4' : 'h2'}
+                        variant={isMobile ? 'h5' : 'h3'}
                         sx={{
                             color: 'white',
                             mb: 2,
                             fontWeight: 600,
                         }}
                     >
-                        Get more out<br />
+                        Get more out <br />
                         of your meetings
                     </Typography>
                     <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', md: '1rem' } }}>
