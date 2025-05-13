@@ -1,8 +1,8 @@
 import React from 'react'
-import AiAssistant from '../Components/MainPageCom/AiAssistant'
+// import AiAssistant from '../Components/MainPageCom/AiAssistant'
 
-import BrainPower from '../Components/MainPageCom/BrainPower'
-import Meeting from '../Components/MainPageCom/Meeting'
+// import BrainPower from '../Components/MainPageCom/BrainPower'
+// import Meeting from '../Components/MainPageCom/Meeting'
 
 import NotesIdea from '../Components/MainPageCom/NotesIdea.jsx'
 import CardComponents from '../Components/MainPageCom/CardComponents.jsx'
@@ -17,11 +17,12 @@ const Mainpage = () => {
         <>
             <NotesIdea />
             <CardComponents />
-            <AiAssistant />
-            <BrainPower />
-            <Meeting />
-            <CardForDetails />
-            <FrictionThoughts />
+              <FrictionThoughts />
+            {/* <AiAssistant /> */}
+            {/* <BrainPower />
+            <Meeting /> */}
+            {/* <CardForDetails /> */}
+          
         </>
     )
 }

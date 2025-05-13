@@ -57,11 +57,9 @@ const NotesIdea = () => {
       >
         <CenteredDiv sx={{ gap: "10px" }}>
           <CenteredDiv>
-            <Typography variant="h3"> Think Better</Typography>
+            <Typography variant="h3"> Think Better with Reflect</Typography>
           </CenteredDiv>
-          <CenteredDiv>
-            <Typography variant="h3">with Reflect</Typography>
-          </CenteredDiv>
+          
           <CenteredDiv sx={{ color: "#acabb1b1", fontSize: "20px" }}>
             Never miss a note ,idea or Connection
           </CenteredDiv>
