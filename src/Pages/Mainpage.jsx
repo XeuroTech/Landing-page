@@ -14,12 +14,21 @@ const Mainpage = () => {
     return (
         <>
             <NotesIdea />
+
             {/* <CardComponents /> */}
             <AiAssistant />
             <BrainPower />
             <Meeting />
             {/* <CardForDetails />
             <FrictionThoughts /> */}
+
+
+            <CardComponents />
+            <AiAssistant />
+            <BrainPower />
+            <Meeting />
+            <CardForDetails />
+            <FrictionThoughts />
 
         </>
     )
