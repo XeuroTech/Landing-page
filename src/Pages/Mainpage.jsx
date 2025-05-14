@@ -16,6 +16,7 @@ const Mainpage = () => {
         <>
             <NotesIdea />
 
+
             {/* <CardComponents /> */}
             <AiAssistant />
             <BrainPower />
@@ -29,6 +30,8 @@ const Mainpage = () => {
         <Meeting />
         <CardForDetails />
         <FrictionThoughts /> */}
+
+
 
         </>
     )
