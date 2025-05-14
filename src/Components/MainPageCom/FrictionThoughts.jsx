@@ -25,27 +25,51 @@
                     ];
 
                     // Radar scanner animation
-                    const scan = keyframes`
-                      0% { transform: rotate(0deg); }
-                      100% { transform: rotate(360deg); }
-                    `;
+                                          const scan = keyframes`
+                          0% {
+                            transform: rotate(0deg);
+                            filter: blur(3px);
+                            opacity: 1;
+                          }
+                          25% {
+                            filter: blur(3px);
+                            opacity: 0.6;
+                          }
+                          50% {
+                            filter: blur(4px);
+                            opacity: 0.4;
+                          }
+                          75% {
+                            filter: blur(3px);
+                            opacity: 0.6;
+                          }
+                          100% {
+                            transform: rotate(360deg);
+                            filter: blur(0px);
+                            opacity: 1;
+                          }
+                                          `;
 
-                    const Scanner = styled("div")({
-                      position: "absolute",
-                      width: "100%",
-                      height: "100%",
-                      "&::before": {
-                        content: '""',
-                        position: "absolute",
-                        top: "50%",
-                        left: "50%",
-                        width: "20%",
-                        height: "2px",
-                        background: "linear-gradient(90deg, rgb(61, 43, 168))",
-                        transformOrigin: "left center",
-                        animation: `${scan} 5s linear infinite`
-                      }
-                    });
+
+                                  const Scanner = styled("div")({
+                position: "absolute",
+                width: "100%",
+                height: "100%",
+                "&::before": {
+                  content: '""',
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  width: "39%", // Longer sweep outward
+                  height: "2px",
+                  transformOrigin: "left center",
+                  transform: "rotate(0deg)",
+                  animation: `${scan} 5s linear infinite`,
+                  background: "linear-gradient(to right, white, #3498db 50%, transparent 100%)",
+                  boxShadow: "0 0 10px 4px rgba(52, 152, 219, 0.3)", // blue glow
+                },
+                                    });
+
                                       export const RadarBackground = styled("div")({
                                         position: "absolute",
                                         width: "100%",
@@ -180,6 +204,7 @@
                               width: "100%",
                               maxWidth: 400,
                               maxHeight: 200,
+                              backgroundColor:"transparent",
                               p: {
                                 xs: 1.5,
                                 sm: 2,
