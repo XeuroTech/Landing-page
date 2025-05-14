@@ -2,7 +2,7 @@ import { Box, Button, styled, Typography } from "@mui/material";
 import React from "react";
 import reflectImage from "../../assets/mainPage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-
+ import { CustomButton } from "../../../Theme/ThemeProvider";
 const NotesIdea = () => {
   const CenteredDiv = styled(Box)(({ theme }) => ({
     width: "100%",
@@ -16,19 +16,7 @@ const NotesIdea = () => {
     color: theme.palette.common.white,
   }));
 
-  const CustomButton = styled(Button)(({ theme }) => ({
-    backgroundColor: "transparent",
-    border: "1px solid #007aff",
-    borderRadius: "32px",
-    fontSize: "12px",
-    textTransform: "none",
-    padding: theme.spacing(1, 3),
-    color: "#007aff",
-    "&:hover": {
-      backgroundColor: "rgba(0, 122, 255, 0.1)",
-      color: "white",
-    },
-  }));
+ 
 
   return (
     <Box sx={{backgroundColor: "#030014"  }}>
