@@ -1,6 +1,6 @@
 import { Box, Button, styled, Typography } from "@mui/material";
 import React from "react";
-import reflectImage from "../../assets/mainPage/refletImage.jpg";
+import reflectImage from "../../assets/mainpage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
  import { CustomButton } from "../../../Theme/ThemeProvider";
 const NotesIdea = () => {
