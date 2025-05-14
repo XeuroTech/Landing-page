@@ -32,29 +32,28 @@ import { Button } from '@mui/material';
 
 
 
+
+
+
 export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
   return (
     <Paper
       elevation={elevation}
-      sx={{
+      sx={(theme) => ({
         width: '250px',
         height: '150px',
         backgroundColor: '#030014',
         color: 'white',
         borderRadius: 0,
         p: 1,
-        px:3,
+        px: 3,
         position: 'relative',
         transition: 'background-color 0.3s ease, transform 0.3s ease',
 
         '&:hover': {
           backgroundColor: '#120014',
-          // transform: 'translateY(-4px)',
         },
 
-        ...sx,
-
-        // Existing wheat vertical line (KEEP)
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -64,9 +63,11 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           width: '1px',
           height: '20px',
           backgroundColor: 'wheat',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
         },
 
-        // New MINIMAL left border using gradient
         '&::after': {
           content: '""',
           position: 'absolute',
@@ -77,26 +78,20 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           background: 'linear-gradient(to bottom, transparent, white, transparent)',
           opacity: 0.1,
           pointerEvents: 'none',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
         },
 
-        // New MINIMAL bottom border using gradient
-        '&::afterBottom': {
-          content: '""',
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '0.5px',
-          background: 'linear-gradient(to right, transparent, white, transparent)',
-          opacity: 0.1,
-          pointerEvents: 'none',
-        },
-      }}
+        ...sx, // allow external overrides
+      })}
     >
       {children}
     </Paper>
   );
 };
+
+
 
 
 

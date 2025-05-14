@@ -175,59 +175,50 @@
                             display="flex"
                             justifyContent="center"
                           >
-                          <DarkPaper
-                      sx={{
-                        width: "100%",
-                        maxWidth: 400,
-                        maxHeight:200,
-                        p: {
-                          xs: 1.5,
-                          sm: 2,
-                          md: 2.5,
-                        },
-                      
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        textAlign: "center",
-                        height: {
-                          xs: "auto",
-                          sm: "auto",
-                          md: "240px",
-                        },
-                      }}
-                    >
-                              <Box sx={{ fontSize: 32, mb: 1 }}>{item.icon}</Box>
+                            <DarkPaper
+                            sx={{
+                              width: "100%",
+                              maxWidth: 400,
+                              maxHeight: 200,
+                              p: {
+                                xs: 1.5,
+                                sm: 2,
+                                md: 2.5,
+                              },
+                              display: "flex",
+                              flexDirection: "column",
+                              alignItems: "center",
+                              textAlign: "center",
+                              height: {
+                                xs: "auto",
+                                sm: "auto",
+                                md: "240px",
+                              },
+                            }}
+                          >
+                            <Box sx={{ fontSize: 32, mb: 1 }}>{item.icon}</Box>
 
-                              <Typography
-                                variant="h6"
-                                fontSize={17}
-                                sx={{ mb: 1 }}
-                              >
-                                {item.title}
-                              </Typography>
+                            <Typography variant="h6" fontSize={17} sx={{ mb: 1 }}>
+                              {item.title}
+                            </Typography>
 
-                              <Typography
-                                variant="body2"
-                                  color="#efedfdb3"
-                                sx={{
-                                  maxWidth:{
-                                    xs:"100%"
+                            <Typography
+                              variant="body2"
+                              color="#efedfdb3"
+                              sx={{
+                                maxWidth: { xs: "100%" },
+                                fontSize: {
+                                  xs: "16px",
+                                  sm: "15px",
+                                  md: "15px",
+                                },
+                                lineHeight: 1.5,
+                              }}
+                            >
+                              {item.description}
+                            </Typography>
+                          </DarkPaper>
 
-                                  },
-                                
-
-                                  fontSize: {
-                                    xs: "16px",
-                                    sm: "15px",
-                                    md: "15px",
-                                  },
-                                  lineHeight: 1.5,
-                                }}
-                              >
-                                {item.description}
-                              </Typography>
-                            </DarkPaper>
                           </Grid>
                         ))}
                       </Grid>
