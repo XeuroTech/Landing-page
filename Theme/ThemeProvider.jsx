@@ -1,13 +1,14 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles'; // Correct import path
 import ridar from '../src/assets/mainpage/rideeeer.png'
 import  testimonolsimg from '../src/assets/mainpage/testimonals.png'
+// import { keyframes } from '@emotion/react';
+import { styled } from '@mui/material/styles';
 
 
 
-
+ 
 
 
 export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
@@ -83,7 +84,7 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 export const Customdiv = styled(Box)(() => ({
   position: "relative",
   width: "100%",
-  height: "100%", // Full viewport height
+  height: "950px", // Full viewport height
   minHeight: "687px", // Minimum height fallback
   backgroundColor: "#030014",
   overflow: "hidden",
@@ -108,36 +109,55 @@ export const TestimonialsImg = styled(Box)(() => ({
   backgroundRepeat: "no-repeat",
 }));
 
+// export const   TestimonialDiv = styled (Box)(()=>({
+//             display:"flex",
+//             flexDirection:"row",
+//                gap:"22px",
+//          animation: 'loop 10s linear infinite',
+
+              
+// }))
+
+export const TestimonialCard = ({ 
+  children, 
+  elevation = 1, 
+  sx = {},
+  ...props 
+}) => {
+  return (
+    <Paper
+      elevation={elevation}
+      sx={{
+       
+        width: "480px",
+        height: "180px",
+        minWidth: 480,
+        backgroundColor: "rgba(8, 6, 36, 1)",
+        color: 'white',
+        borderRadius: "4px",
+        border: '1px solid rgba(128, 128, 128, 0.5)',
+        flexShrink: 0,
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        p: 2,
+
+         background:"linear-gradient(90deg)",
+         inset:"0",
+       
+        ...sx,
+      }}
+      {...props}
+    >
+      {children}
+    </Paper>
+  );
+};
 
 
 
 
-// export const CustomDiv = styled(Box)({
 
-//   width: "100%",
-//   height: "max-content",
-//   display: "flex",
-//   flexDirection: "row",
-//   justifyContent: "start",
-//   overflowX: "auto",
-//   gap: "10px",
-//   paddingTop: "5px",
-//   backgroundColor: 'rgba(8,6,36,0.9)',
-//   paddingBottom: '5px',
-//   boxSizing: "border-box",
-//   '&::-webkit-scrollbar': {
-//     display: 'none'
-//   },
-//   scrollBehavior: 'smooth',
-//   '&:hover': {
-//     animation: 'scrollAnimation 1s linear infinite',
-//     cursor: 'grab'
-//   },
-//   '@keyframes scrollAnimation': {
-//     '0%': { scrollLeft: 0 },
-//     '100%': { scrollLeft: '100%' }
-//   }
-// });
 
 
    
