@@ -8,6 +8,7 @@ import CardComponents from '../Components/MainPageCom/CardComponents.jsx'
 import CardForDetails from '../Components/MainPageCom/CardForDetails.jsx'
 import FrictionThoughts from '../Components/MainPageCom/FrictionThoughts.jsx'
 import Navbar from '../Components/NavBar.jsx'
+import Trail from '../Components/MainPageCom/Trail.jsx'
 
 
 
@@ -20,7 +21,9 @@ const Mainpage = () => {
             <AiAssistant />
             <BrainPower />
             <Meeting />
+            <Trail />
             <Course />
+
 
 
             {/* <CardComponents />
