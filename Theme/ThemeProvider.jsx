@@ -15,13 +15,17 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
     <Paper
       elevation={elevation}
       sx={{
-        width: '250px',
-        height: '150px',
-        backgroundColor: '#030014',
+
+        width: 250,
+        height: 128,
+        borderLeft: "1px solid wheat",
+        minWidth: 170, // Add this to prevent flex-shrinking
+        backgroundColor: 'black',
+
         color: 'white',
         borderRadius: 0,
         p: 1,
-        px:3,
+        px: 3,
         position: 'relative',
         transition: 'background-color 0.3s ease, transform 0.3s ease',
 
@@ -110,7 +114,7 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 // });
 
 
-   
+
 // export const CustomDiv = styled(Box)(() => ({
 //   width: "100%",
 //   // display: "grid",
@@ -131,9 +135,9 @@ export const CustomDiv = styled(Box)({
   height: "max-content",
   display: "flex",
   flexDirection: "column",
-  flexWrap:"wrap",
-  justifyContent:"center",
-  alignItems:"center",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignItems: "center",
 
   overflowX: "auto",
   gap: "10px",
@@ -188,11 +192,6 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
   );
 };
 
-
-
-/////ridar 
-
-
 export const RadarBackground = styled('div')({
   position: 'absolute',
   width: '100%',
@@ -221,7 +220,7 @@ export const CardDiv = ({ children, elevation = 1, sx = {} }) => {
       sx={{
         width: 250,
         height: 128,
-        borderLeft:"1px solid wheat",
+        borderLeft: "1px solid wheat",
         minWidth: 170, // Add this to prevent flex-shrinking
         backgroundColor: 'transparent',
         color: 'white',
