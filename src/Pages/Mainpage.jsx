@@ -16,10 +16,26 @@ const Mainpage = () => {
     return (
         <>
             <NotesIdea />
+
+
+            {/* <CardComponents /> */}
             <AiAssistant />
             <BrainPower />
             <Meeting />
             <Course />
+
+
+            {/* <CardComponents />
+        <AiAssistant />
+        <BrainPower />
+        <Meeting />
+        <CardForDetails />
+        <FrictionThoughts /> */}
+
+
+
+
+
 
         </>
     )
