@@ -9,6 +9,7 @@ import CardComponents from '../Components/MainPageCom/CardComponents.jsx'
 import CardForDetails from '../Components/MainPageCom/CardForDetails.jsx'
 import FrictionThoughts from '../Components/MainPageCom/FrictionThoughts.jsx'
 import Navbar from '../Components/NavBar.jsx'
+import Testiminols from '../Components/MainPageCom/Testiminols.jsx'
 
 
 const Mainpage = () => {
@@ -18,6 +19,7 @@ const Mainpage = () => {
             <CardComponents />
 
               <FrictionThoughts />
+              <Testiminols/>
             {/* <AiAssistant /> */}
             {/* <BrainPower />
             <Meeting /> */}

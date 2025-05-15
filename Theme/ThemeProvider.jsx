@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles'; // Correct import path
 import ridar from '../src/assets/mainpage/rideeeer.png'
-
+import  testimonolsimg from '../src/assets/mainpage/testimonals.png'
 
 
 
@@ -78,6 +78,36 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 
 
 
+///testimonal compnents
+
+export const Customdiv = styled(Box)(() => ({
+  position: "relative",
+  width: "100%",
+  height: "100%", // Full viewport height
+  minHeight: "687px", // Minimum height fallback
+  backgroundColor: "#030014",
+  overflow: "hidden",
+  display:"flex",
+  justifyContent:"center",
+  alignItems:"center",
+}));
+
+export const TestimonialsImg = styled(Box)(() => ({
+  position: "absolute",
+  display: "flex",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)", 
+  height: "557px", 
+  width: "602px",  
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundImage: `url(${testimonolsimg})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+}));
+
 
 
 
@@ -111,18 +141,7 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 
 
    
-// export const CustomDiv = styled(Box)(() => ({
-//   width: "100%",
-//   // display: "grid",
-//   // gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-//   gap: 0, // no space between cards
-//   backgroundColor: 'rgba(8,6,36,0.9)',
-//   padding: "10px",
-//   boxSizing: "border-box",
-//   overflowY: "auto", // vertical scroll if needed
-//   scrollbarWidth: "none",
-//   // "&::-webkit-scrollbar": { display: "none" },
-// }));
+
 
 
 
