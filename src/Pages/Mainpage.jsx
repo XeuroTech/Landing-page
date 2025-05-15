@@ -27,6 +27,7 @@ const Mainpage = () => {
             <BrainPower />
             <Meeting />
             <CardForDetails /> */}
+        
         </>
     )
 }
