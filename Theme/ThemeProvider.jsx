@@ -5,27 +5,77 @@ import { styled } from '@mui/material/styles'; // Correct import path
 import ridar from '../src/assets/mainpage/rideeeer.png'
 
 
+
+
+
+
+
 export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
   return (
     <Paper
       elevation={elevation}
       sx={{
-        width: 250,
-        height: 128,
-        borderLeft:"1px solid wheat",
-        minWidth: 170, // Add this to prevent flex-shrinking
-        backgroundColor: 'black',
+        width: '250px',
+        height: '150px',
+        backgroundColor: '#030014',
         color: 'white',
-        borderRadius: "0px",
-        p: 3,
-        flexShrink: 0, // Prevent cards from shrinking
+        borderRadius: 0,
+        p: 1,
+        px:3,
+        position: 'relative',
+        transition: 'background-color 0.3s ease, transform 0.3s ease',
+
+        '&:hover': {
+          backgroundColor: '#1a1a1a',
+          // transform: 'translateY(-4px)',
+        },
+
         ...sx,
+
+        // Existing wheat vertical line (KEEP)
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          left: 0,
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: '1px',
+          height: '20px',
+          backgroundColor: 'wheat',
+        },
+
+        // New MINIMAL left border using gradient
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '0.5px',
+          height: '100%',
+          background: 'linear-gradient(to bottom, transparent, white, transparent)',
+          opacity: 0.1,
+          pointerEvents: 'none',
+        },
+
+        // New MINIMAL bottom border using gradient
+        '&::afterBottom': {
+          content: '""',
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '0.5px',
+          background: 'linear-gradient(to right, transparent, white, transparent)',
+          opacity: 0.1,
+          pointerEvents: 'none',
+        },
       }}
     >
       {children}
     </Paper>
   );
 };
+
 
 
 
@@ -60,12 +110,31 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 // });
 
 
+   
+// export const CustomDiv = styled(Box)(() => ({
+//   width: "100%",
+//   // display: "grid",
+//   // gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+//   gap: 0, // no space between cards
+//   backgroundColor: 'rgba(8,6,36,0.9)',
+//   padding: "10px",
+//   boxSizing: "border-box",
+//   overflowY: "auto", // vertical scroll if needed
+//   scrollbarWidth: "none",
+//   // "&::-webkit-scrollbar": { display: "none" },
+// }));
+
+
 
 export const CustomDiv = styled(Box)({
   width: "100%",
   height: "max-content",
   display: "flex",
-  flexDirection: "row",
+  flexDirection: "column",
+  flexWrap:"wrap",
+  justifyContent:"center",
+  alignItems:"center",
+
   overflowX: "auto",
   gap: "10px",
   padding: "5px 0",
