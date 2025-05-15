@@ -3,6 +3,31 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles'; // Correct import path
 import ridar from '../src/assets/mainpage/rideeeer.png'
+import { Button } from '@mui/material';
+
+
+
+
+   export  const CustomButton = styled(Button)(({ theme }) => ({
+          background: 'linear-gradient(to right,rgb(180, 101, 104) , white)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        border: "1px solid #007aff",
+        borderRadius: "32px",
+        fontSize: "12px",
+        textTransform: "none",
+        padding: theme.spacing(1, 3),
+        color: "#007aff",
+        "&:hover": {
+          backgroundColor: "rgba(0, 122, 255, 0.1)",
+          color: "white",
+        },
+      }));
+
+
+
+      
+
 
 
 
@@ -14,25 +39,21 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
   return (
     <Paper
       elevation={elevation}
-      sx={{
+      sx={(theme) => ({
         width: '250px',
         height: '150px',
         backgroundColor: '#030014',
         color: 'white',
         borderRadius: 0,
         p: 1,
-        px:3,
+        px: 3,
         position: 'relative',
         transition: 'background-color 0.3s ease, transform 0.3s ease',
 
         '&:hover': {
-          backgroundColor: '#1a1a1a',
-          // transform: 'translateY(-4px)',
+          backgroundColor: '#120014',
         },
 
-        ...sx,
-
-        // Existing wheat vertical line (KEEP)
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -42,9 +63,11 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           width: '1px',
           height: '20px',
           backgroundColor: 'wheat',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
         },
 
-        // New MINIMAL left border using gradient
         '&::after': {
           content: '""',
           position: 'absolute',
@@ -55,26 +78,20 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           background: 'linear-gradient(to bottom, transparent, white, transparent)',
           opacity: 0.1,
           pointerEvents: 'none',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
         },
 
-        // New MINIMAL bottom border using gradient
-        '&::afterBottom': {
-          content: '""',
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          width: '100%',
-          height: '0.5px',
-          background: 'linear-gradient(to right, transparent, white, transparent)',
-          opacity: 0.1,
-          pointerEvents: 'none',
-        },
-      }}
+        ...sx, // allow external overrides
+      })}
     >
       {children}
     </Paper>
   );
 };
+
+
 
 
 
@@ -197,12 +214,16 @@ export const RadarBackground = styled('div')({
   position: 'absolute',
   width: '100%',
   height: '100%',
-  backgroundImage: `url(${ridar})`,
-  backgroundSize: 'contain', // fit full image without cropping
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  backgroundColor: '#030014', // fallback background
+  backgroundImage: `
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(3, 0, 20, 0.85) 50% ),
+    url(${ridar})
+  `,
+  backgroundSize: 'cover, contain', // first background image cover, second image 'contain'
+  backgroundRepeat: 'no-repeat, no-repeat',
+  backgroundPosition: 'center, center',
+  backgroundColor: '#030014',
 });
+
 
 
 export const RadarContainer = styled(Box)({
