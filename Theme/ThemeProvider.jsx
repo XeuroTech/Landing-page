@@ -117,7 +117,7 @@ export const TestimonialCard = ({
         width: "480px",
         height: "180px",
         minWidth: 480,
-        backgroundColor: "rgba(8, 6, 36, 1)",
+        backgroundColor: "#FFFFFF03",
         color: "white",
         borderRadius: "4px",
         border: "1px solid rgba(128, 128, 128, 0.5)",
