@@ -19,7 +19,6 @@ const Mainpage = () => {
             <BrainPower />
             <Meeting />
             <Course />
-
         </>
     )
 }
