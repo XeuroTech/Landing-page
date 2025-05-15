@@ -31,7 +31,7 @@ const TrailImage = () => {
                     display: 'flex',
                     flexDirection: { xs: 'column', sm: 'column', md: 'row' },
                     justifyContent: 'center',
-                    gap: 6,
+                    gap: { xs: 1, sm: 2, md: 6 },
                     textAlign: { xs: 'center', md: 'center' },
                     px: { xs: 2, sm: 4 },
                 }}
