@@ -11,18 +11,23 @@ import FrictionThoughts from '../Components/MainPageCom/FrictionThoughts.jsx'
 import Navbar from '../Components/NavBar.jsx'
 
 
-
 const Mainpage = () => {
     return (
         <>
             <NotesIdea />
             <CardComponents />
+
               <FrictionThoughts />
             {/* <AiAssistant /> */}
             {/* <BrainPower />
             <Meeting /> */}
             {/* <CardForDetails /> */}
-          
+  
+            {/* <AiAssistant />
+            <BrainPower />
+            <Meeting />
+            <CardForDetails /> */}
+            <FrictionThoughts /
         </>
     )
 }
