@@ -20,7 +20,7 @@ const Mainpage = () => {
 
               <FrictionThoughts />
               <Testiminols/>
-               <CardComponents />
+             
             {/* <AiAssistant /> */}
             {/* <BrainPower />
             <Meeting /> */}

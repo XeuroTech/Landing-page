@@ -12,6 +12,7 @@ import { keyframes } from "@emotion/react"; // ✅ Import keyframes
 import {
   Customdiv,
   DarkPaper,
+  GradientBorderBox,
   TestimonialCard,
   TestimonialsImg,
 } from "../../../Theme/ThemeProvider";
@@ -115,33 +116,15 @@ const Testiminols = () => {
           left: "50%",
           transform: "translate(-50%, -50%)",
           paddingTop: {
-            lg: "170px ",
-            xs: "130px",
+            lg: "150px ",
+            xs: "120px",
           },
         }}
       >
-        <Box
-          px={2}
-          py={1}
-          component={"div"}
-          sx={{
-            bgcolor: "transparent",
-            width: "max-content",
-            color: "white",
-            fontFamily: "sans-serif",
-            fontSize: {
-              sm: "12px",
-              xs: "8px",
-              lg: "16px",
-            },
-            lineHeight: 1,
-            fontWeight: "500",
-            border: "1px solid blue",
-            borderRadius: "20px",
-          }}
-        >
-          Wall of love
-        </Box>
+          <GradientBorderBox>
+            Well of love
+          </GradientBorderBox>
+
 
         <Box
           color={"white"}
