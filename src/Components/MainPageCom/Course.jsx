@@ -1,4 +1,4 @@
-import { Box, Button, Typography, useTheme } from '@mui/material';
+import { Box, Button, Typography, } from '@mui/material';
 import coursepic from '../../assets/homepic/aiassistant.png';
 
 const Course = ({
@@ -11,7 +11,7 @@ const Course = ({
     academyDescription = "Master the principles of note-taking in Reflect's free online Academy.",
     courseButtonText = "Take The Course",
 }) => {
-    const theme = useTheme();
+
 
     return (
         <Box sx={{

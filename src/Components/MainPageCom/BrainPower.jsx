@@ -1,11 +1,10 @@
-import { Box, Button, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Button, Typography, } from '@mui/material';
 import React from 'react';
 import brainPowerImage from '/src/assets/homepic/brain-power.png';
 
 const BrainPower = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+
+
 
     return (
         <Box sx={{
