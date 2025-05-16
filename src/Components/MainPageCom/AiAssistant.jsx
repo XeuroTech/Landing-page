@@ -99,11 +99,11 @@ const AiAssistant = ({
                     borderRadius: 3,
                     textAlign: 'start'
                 }}>
-                    <Box sx={{ display: 'flex', gap: 5 }}>
+                    <Box sx={{ display: 'flex', gap: { xs: 1, sm: 3, md: 5 } }}>
                         <Typography variant="h6" gutterBottom>
                             {cardTitle}
                         </Typography>
-                        <Button size='small' sx={{ fontSize: 10 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
+                        <Button size='small' sx={{ fontSize: 7 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
                     </Box>
                     <Typography>
                         {cardDescription}

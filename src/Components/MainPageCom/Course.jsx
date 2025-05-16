@@ -1,4 +1,4 @@
-import { Box, Button, styled, Typography } from '@mui/material';
+import { Box, Button, Typography, useTheme } from '@mui/material';
 import coursepic from '../../assets/homepic/aiassistant.png';
 
 const Course = ({
@@ -10,105 +10,188 @@ const Course = ({
     academyHeading = "Learn how to take great notes at our academy",
     academyDescription = "Master the principles of note-taking in Reflect's free online Academy.",
     courseButtonText = "Take The Course",
-
-    // Style Props
-    headingWidth = { sm: '45%', md: '65%', },
-    missionWidth = { sm: '45%', md: '60%' },
-    imageHeight = { xs: '50vh', sm: '60vh', md: '100vh' },
-    contentSpacing = { xs: 2, sm: 3, md: 4 },
-    containerMaxWidth = '1200px'
 }) => {
-    const CourseDiv = styled(Box)(() => ({
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%',
-        backgroundColor: "#030014",
-        color: 'white'
-    }));
+    const theme = useTheme();
 
     return (
-        <CourseDiv>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: contentSpacing,
-                    maxWidth: containerMaxWidth,
-                    width: '100%',
-                    px: { xs: 2, sm: 3, md: 4 }
-                }}
-            >
-                {/* About Button */}
-                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button variant='outlined' sx={{ borderRadius: 5, borderColor: 'white', color: 'white' }}>
-                        {aboutButtonText}
-                    </Button>
-                </Box>
-
-                {/* Heading & Mission */}
-                <Box
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: '100%',
+            backgroundColor: "#030014",
+            color: 'white',
+            py: { xs: 4, md: 8 }
+        }}>
+            <Box sx={{
+                width: '100%',
+                maxWidth: '1200px',
+                px: { xs: 2, sm: 4 },
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                gap: { xs: 3, md: 4 }
+            }}>
+                {/* About Section */}
+                <Button
+                    variant='outlined'
                     sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        textAlign: 'center'
+                        borderRadius: 5,
+                        borderColor: 'white',
+                        color: 'white',
+                        px: 4,
+                        py: 1,
+                        fontSize: { xs: '0.875rem', md: '1rem' }
                     }}
                 >
-                    <Typography variant='h3' sx={{ width: headingWidth }}>
+                    {aboutButtonText}
+                </Button>
+
+                {/* Heading Section */}
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    width: '100%'
+                }}>
+                    <Typography variant='h3' sx={{
+                        fontSize: {
+                            xs: '1.4rem',
+                            sm: '2rem',
+                            md: '2rem',
+                            lg: '3rem'
+                        },
+                        lineHeight: 1.2,
+                        mb: 2,
+                        maxWidth: { xs: '70%', md: '60%' }
+                    }}>
                         {headingText}
                     </Typography>
-                    <Typography sx={{ width: missionWidth, mt: 2 }}>
+                    <Typography variant='body1' sx={{
+                        fontSize: {
+                            xs: '0.7rem',
+                            md: '1.1rem',
+                            lg: '1.2rem'
+                        },
+                        opacity: 0.9,
+                        maxWidth: { xs: '70%', md: '50%' }
+                    }}>
                         {missionText1}
                     </Typography>
                 </Box>
 
                 {/* Values Button */}
-                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
-                    <Button variant='outlined' sx={{ borderRadius: 2, borderColor: 'white', color: 'white' }}>
-                        {valuesButtonText}
-                    </Button>
-                </Box>
+                <Button
+                    variant='outlined'
+                    sx={{
+                        borderRadius: 2,
+                        borderColor: 'white',
+                        color: 'white',
+                        px: 4,
+                        py: 1,
+                        fontSize: { xs: '0.5rem', md: '1rem' }
+                    }}
+                >
+                    {valuesButtonText}
+                </Button>
 
-                {/* Academy Section with Image */}
-                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 50 }}>
+                {/* Academy Section */}
+                <Box sx={{
+                    width: '100%',
+                    mt: { xs: 3, md: 8 },
+                    position: 'relative',
+                    minHeight: { xs: '50vh', md: '70vh' },
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
                     <Box
+                        component="img"
+                        src={coursepic}
+                        alt="Course illustration"
                         sx={{
-                            backgroundImage: `url(${coursepic})`,
-                            backgroundPosition: 'center',
-                            backgroundRepeat: 'no-repeat',
-                            backgroundSize: 'contain',
-                            height: imageHeight,
-                            width: '80%',
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'contain',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            zIndex: 1
                         }}
-                    >
-                        <Box
+                    />
+
+                    <Box sx={{
+                        position: 'relative',
+                        zIndex: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        width: '100%',
+                        maxWidth: '1200px',
+                        px: 2
+                    }}>
+                        <Button
+                            variant='outlined'
                             sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                flexDirection: 'column',
-                                textAlign: 'center',
+                                borderRadius: 5,
+                                color: 'white',
+                                borderColor: 'white',
+                                mb: 2,
+                                px: 4,
+                                py: 1,
+                                fontSize: { xs: '0.5rem', md: '1rem' }
                             }}
                         >
-                            <Button variant='outlined' sx={{ borderRadius: 5, color: 'white', borderColor: 'white' }}>
-                                {academyButtonText}
-                            </Button>
-                            <Typography variant='h3' sx={{ width: { sm: '50%', md: '65%' }, fontSize: { sm: '30px', xs: '25px', md: '50px' }, pt: 1 }}>
-                                {academyHeading}
-                            </Typography>
-                            <Typography sx={{ width: { sm: '50%', md: '40%' }, pt: 1 }}>
-                                {academyDescription}
-                            </Typography>
-                            <Button variant='outlined' sx={{ borderRadius: 2, color: 'white', borderColor: 'white', mt: 2 }}>
-                                {courseButtonText}
-                            </Button>
-                        </Box>
+                            {academyButtonText}
+                        </Button>
+
+                        <Typography variant='h4' sx={{
+                            fontSize: {
+                                xs: '1.25rem',
+                                sm: '1.5rem',
+                                md: '2rem',
+                                lg: '2.5rem'
+                            },
+                            maxWidth: { xs: '90%', sm: '80%', md: '70%', lg: '60%' },
+                            mb: 2,
+                            lineHeight: 1.3
+                        }}>
+                            {academyHeading}
+                        </Typography>
+
+                        <Typography sx={{
+                            fontSize: {
+                                xs: '0.6rem',
+                                sm: '1rem',
+                                md: '1.1rem',
+                                lg: '1.2rem'
+                            },
+                            maxWidth: { xs: '90%', sm: '80%', md: '70%', lg: '50%' },
+                            mb: 3,
+                            opacity: 0.9,
+                            lineHeight: 1.6
+                        }}>
+                            {academyDescription}
+                        </Typography>
+
+                        <Button
+                            variant='outlined'
+                            sx={{
+                                borderRadius: 2,
+                                color: 'white',
+                                borderColor: 'white',
+                                px: 4,
+                                py: 1,
+                                fontSize: { xs: '0.5rem', md: '1rem' }
+                            }}
+                        >
+                            {courseButtonText}
+                        </Button>
                     </Box>
                 </Box>
             </Box>
-        </CourseDiv>
+        </Box>
     );
 };
 

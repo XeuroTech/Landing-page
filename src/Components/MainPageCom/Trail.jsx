@@ -11,7 +11,7 @@ const TrailBox = styled(Box)(({ theme }) => ({
     backgroundColor: "#030014",
     [theme.breakpoints.down('sm')]: {
         height: 'auto',
-        padding: theme.spacing(4, 2),
+
     }
 }));
 
