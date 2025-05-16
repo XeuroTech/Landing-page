@@ -3,31 +3,28 @@ import {
   Button, 
   styled, 
   Typography, 
-  Grid, 
   TextField, 
   Divider, 
   Link 
 } from "@mui/material";
 import React from "react";
- import {FoterBg} from "../../../Theme/ThemeProvider.jsx";
+import { FoterBg } from "../../../Theme/ThemeProvider.jsx";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import reflectImage from "../../assets/mainpage/refletImage.jpg";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import DiscordIcon from "@mui/icons-material/Chat";
+import logo from "../../assets/mainpage/logo.png";
 
-const FooterContainer = styled(Box)(({ theme }) => ({
+const FooterContainer = styled(Box)(() => ({
   backgroundColor: "#030014",
   color: "#000",
   fontFamily: "sans-serif",
-  [theme.breakpoints.down("sm")]: {
-    textAlign: "center",
-  },
 }));
 
 const FooterColumn = styled(Box)(() => ({
   display: "flex",
   flexDirection: "column",
-  gap: "8px",
+  gap: "15px",
 }));
 
 const FooterTitle = styled(Typography)({
@@ -39,11 +36,9 @@ const FooterTitle = styled(Typography)({
 
 const FooterLink = styled(Link)({
   color: "#efedfd99",
-  fontSize: "14px",
+  fontSize: "13px",
+  fontWeight: 500,
   textDecoration: "none",
-  "&:hover": {
-    textDecoration: "underline",
-  },
 });
 
 const CustomButton = styled(Button)(({ theme }) => ({
@@ -60,51 +55,52 @@ const CustomButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const CenteredDiv = styled(Box)(({ theme }) => ({
-  width: "100%",
-  height: "max-content",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flexDirection: "column",
-  textAlign: "center",
-  boxSizing: "border-box",
-  color: theme.palette.common.white,
-}));
-
 const Footer = () => {
   return (
     <FooterContainer>
       {/* Top Section */}
-<Box
-  sx={{
-    position: "relative", // Required for absolute positioning of background
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    color: "white",
-    textAlign: "center",
-    px: 2,
-    minHeight: "557px", // Ensures space for the background image
-    overflow: "hidden",  // Optional: hides overflow from the image
-  }}
->
-  <FoterBg image={reflectImage} />
+      <Box 
+        sx={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          color: "white",
+          textAlign: "center",
+          px: 2,
+          minHeight: "557px",
+          overflow: "hidden",
+        }}
+      >
+        <FoterBg image={reflectImage} />
 
-  <Box sx={{ position: "relative", zIndex: 1 }}>
-    <CustomButton startIcon={<AutoAwesomeIcon />} sx={{ mb: 2 }}>
-      Take notes using AI
-    </CustomButton>
+        <Box sx={{ position: "relative", zIndex: 1 }}>
+          <CustomButton startIcon={<AutoAwesomeIcon />} sx={{ mb: 2 }}>
+            Take notes using AI
+          </CustomButton>
 
-    <Typography variant="h3">Think Better with Reflect</Typography>
-    <Typography sx={{ color: "#acabb1b1", fontSize: "20px", mt: 1 }}>
-      Never miss a note, idea or Connection
-    </Typography>
-  </Box>
-</Box>
-
-
+          <Typography variant="h3">Think Better with Reflect</Typography>
+          <Typography sx={{ color: "#acabb1b1", fontSize: "20px", mt: 1 }}>
+            Never miss a note, idea or Connection
+          </Typography>
+          <Button
+            sx={{
+              bgcolor: "#712FFF3D",
+              color: "#F4F0FF",
+              mt: 3,
+              px: 3,
+              border: 1,
+              borderColor: "#F4F0FF",
+              borderRadius: 3,
+              fontWeight: 500,
+              textTransform: "none",
+            }}
+          >
+            Start your 14-day trail
+          </Button>
+        </Box>
+      </Box>
 
       {/* Footer Section */}
       <Box px={{ xs: 2, lg: 6 }} py={4}>
@@ -112,21 +108,32 @@ const Footer = () => {
         <Box
           display="flex"
           flexDirection={{ xs: "column", lg: "row" }}
-          justifyContent="space-between"
-          alignItems="flex-start"
-          gap={4}
+          justifyContent={{ xs: "flex-start", lg: "space-between" }}
+          alignItems={{ xs: "flex-start", lg: "flex-start" }}
+          gap={{ xs: 4, lg: 0 }}
         >
-          {/*   Left Side - Logo and Social */}
+          {/* Left Side - Logo and Social */}
           <Box
             display="flex"
-            flexDirection="column"
-            gap={3}
+            flexDirection={{ xs: "row", lg: "column" }}
+            justifyContent={{ xs: "space-between", lg: "flex-start" }}
+            gap={{ xs: 0, lg: "90px" }}
             width={{ xs: "100%", lg: "auto" }}
-            
+            mb={{ xs: 3, lg: 0 }}
           >
-            <Typography fontWeight={600} color="#fff" fontSize="20px">
-              Reflect
-            </Typography>
+            <Box display="flex" gap={1} mb={{ lg: 3 }}>
+              <Box
+                component="img"
+                src={logo}
+                alt="Reflect logo"
+                width="30px"
+                height="30px"
+                sx={{ borderRadius: "8px" }}
+              />
+              <Typography fontWeight={600} color="#fff" fontSize="20px">
+                Reflect
+              </Typography>
+            </Box>
             <Box display="flex" gap={2}>
               <DiscordIcon sx={{ color: "#aaa" }} />
               <TwitterIcon sx={{ color: "#aaa" }} />
@@ -136,11 +143,11 @@ const Footer = () => {
           {/* Middle - Footer Links */}
           <Box
             display="flex"
-            flexDirection={{ xs: "column", sm: "row" }}
-            gap={{ xs: 4, sm: 8 }}
-            width="100%"
-            justifyContent="space-between"
-            maxWidth="600px"
+            flexDirection={{ xs: "column", lg: "row" }}
+            gap={{ xs: 4, lg: 8 }}
+            width={{ xs: "100%", lg: "auto" }}
+            justifyContent={{ xs: "flex-start", lg: "space-between" }}
+            ml={{ lg: 8 }}
           >
             <FooterColumn>
               <FooterTitle>Product</FooterTitle>
@@ -172,12 +179,12 @@ const Footer = () => {
         {/* Newsletter Section */}
         <Box
           display="flex"
-          flexDirection={{ xs: "column", md: "row" }}
-          justifyContent="space-between"
-          alignItems={{ xs: "flex-start", md: "center" }}
+          flexDirection={{ xs: "column", lg: "row" }}
+          justifyContent={{ xs: "flex-start", lg: "space-between" }}
+          alignItems={{ xs: "flex-start", lg: "center" }}
           gap={3}
         >
-          <Box>
+          <Box width={{ xs: "100%", lg: "auto" }}>
             <FooterTitle sx={{ fontSize: "18px" }}>
               Get free note-taking workflows
             </FooterTitle>
@@ -189,21 +196,21 @@ const Footer = () => {
           <Box
             display="flex"
             gap={1}
-            alignItems="center"
-            width={{ xs: "100%", md: "auto" }}
-            maxWidth="500px"
+            flexDirection={{ xs: "column", lg: "row" }}
+            alignItems={{ xs: "stretch", lg: "center" }}
+            width={{ xs: "100%", lg: "auto" }}
           >
             <TextField
               variant="outlined"
               placeholder="Enter your email"
               size="small"
               sx={{
-                width: { xs: "100%", md: "300px" },
+                width: { xs: "100%", lg: "300px" },
                 backgroundColor: "#9382FF0A",
                 borderRadius: "4px",
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#E0E0E0",
+                   border: "1px solid rgba(212, 212, 213, 0.6)",
                     borderWidth: "1px",
                   },
                   "&:hover fieldset": {
@@ -222,19 +229,16 @@ const Footer = () => {
             <Button
               variant="contained"
               sx={{
-                width: { xs: "100%", md: "auto" },
-                backgroundColor: "#9382FF",
+                width: { xs: "100%", lg: "auto" },
+                backgroundColor: "#9382FF0A",
                 color: "#fff",
                 fontWeight: 500,
                 borderRadius: "4px",
                 textTransform: "none",
-                "&:hover": {
-                  backgroundColor: "#7A6BFF",
-                },
-                border: "1px solid #efedfd99",
+                border: "1px solid rgba(212, 212, 213, 0.6)",
                 whiteSpace: "nowrap",
                 px: 3,
-                py: 1
+                py: 1,
               }}
             >
               Subscribe
@@ -247,10 +251,11 @@ const Footer = () => {
         {/* Bottom Links */}
         <Box
           display="flex"
-          flexDirection={{ xs: "column", sm: "row" }}
-          justifyContent="space-between"
+          flexDirection={{ xs: "column", lg: "row" }}
+          justifyContent={{ xs: "center", lg: "space-between" }}
           alignItems="center"
           gap={2}
+          textAlign={{ xs: "center", lg: "left" }}
         >
           <Typography variant="body2" color="#efedfd99">
             Privacy Policy &nbsp; - &nbsp; Terms of Conditions
