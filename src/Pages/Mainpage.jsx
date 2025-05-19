@@ -19,7 +19,7 @@ const Mainpage = () => {
             <CardComponents />
 
            
-              <Testiminols/>
+              <Testiminols/> 
 
                  <FrictionThoughts />
              
