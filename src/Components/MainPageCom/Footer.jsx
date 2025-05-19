@@ -1,235 +1,283 @@
-import {
-  Box,
-  Button,
-  styled,
-  Typography,
-  TextField,
-  Divider,
-  Link,
-} from "@mui/material";
-import React from "react";
-import { FoterBg } from "../../../Theme/ThemeProvider.jsx";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import reflectImage from "../../assets/mainpage/refletImage.jpg";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import DiscordIcon from "@mui/icons-material/Chat";
-import logo from "../../assets/mainpage/logo.png";
+                                  import {
+                                    Box,
+                                    Button,
+                                    styled,
+                                    Typography,
+                                    TextField,
+                                    Divider,
+                                    Link,
+                                  } from "@mui/material";
+                                  import React from "react";
+                                  import { FoterBg } from "../../../Theme/ThemeProvider.jsx";
+                                  import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+                                  import reflectImage from "../../assets/mainpage/refletImage.jpg";
+                                  import TwitterIcon from "@mui/icons-material/Twitter";
+                                  import DiscordIcon from "@mui/icons-material/Chat";
+                                  import logo from "../../assets/mainpage/logo.png";
 
-const FooterContainer = styled(Box)(() => ({
-  backgroundColor: "#030014",
-  color: "#000",
-  fontFamily: "sans-serif",
-}));
+                                  const FooterContainer = styled(Box)(() => ({
+                                    backgroundColor: "#030014",
+                                    color: "#000",
+                                    fontFamily: "sans-serif",
+                                  }));
 
-const FooterColumn = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "15px",
-}));
+                                  const FooterColumn = styled(Box)(() => ({
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    gap: "15px",
+                                  }));
 
-const FooterTitle = styled(Typography)({
-  fontWeight: 500,
-  color: "white",
-  fontSize: "14px",
-  marginBottom: "8px",
-});
+                                  const FooterTitle = styled(Typography)({
+                                    fontWeight: 500,
+                                    color: "white",
+                                    fontSize: "14px",
+                                    marginBottom: "8px",
+                                  });
 
-const FooterLink = styled(Link)({
-  color: "#efedfd99",
-  fontSize: "13px",
-  
-  fontWeight: 500,
-  textDecoration: "none",
-});
+                                  const FooterLink = styled(Link)({
+                                    color: "#efedfd99",
+                                    fontSize: "13px",
+                                    fontWeight: 500,
+                                    textDecoration: "none",
+                                    "&:hover": {
+                                      color: "white",
+                                    },
+                                  });
 
-const CustomButton = styled(Button)(({ theme }) => ({
-  backgroundColor: "transparent",
-  border: "1px solid #007aff",
-  borderRadius: "32px",
-  fontSize: "12px",
-  textTransform: "none",
-  padding: theme.spacing(1, 3),
-  color: "#007aff",
-  "&:hover": {
-    backgroundColor: "rgba(0, 122, 255, 0.1)",
-    color: "white",
-  },
-}));
+                                  const CustomButton = styled(Button)(({ theme }) => ({
+                                    backgroundColor: "transparent",
+                                    border: "1px solid #007aff",
+                                    borderRadius: "32px",
+                                    fontSize: "12px",
+                                    textTransform: "none",
+                                    padding: theme.spacing(1, 3),
+                                    color: "#007aff",
+                                    "&:hover": {
+                                      backgroundColor: "rgba(0, 122, 255, 0.1)",
+                                      color: "white",
+                                    },
+                                  }));
 
-const Footer = () => {
-  return (
-    <FooterContainer>
-      {/* Top Section */}
-      <Box
-        sx={{
-          position: "relative",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "column",
-          color: "white",
-          textAlign: "center",
-          px: 2,
-          minHeight: "557px",
-          overflow: "hidden",
-        }}
-      >
-        <FoterBg image={reflectImage} />
+                                  const Footer = () => {
+                                    return (
+                                      <FooterContainer>
+                                        {/* Top Section */}
+                                        <Box
+                                          sx={{
+                                            position: "relative",
+                                            display: "flex",
+                                            justifyContent: "center",
+                                            alignItems: "center",
+                                            flexDirection: "column",
+                                            color: "white",
+                                            textAlign: "center",
+                                            px: 2,
+                                            minHeight: "557px",
+                                            overflow: "hidden",
+                                          }}
+                                        >
+                                          <FoterBg image={reflectImage} />
 
-        <Box sx={{ position: "relative", zIndex: 1 }}>
-          <CustomButton startIcon={<AutoAwesomeIcon />} sx={{ mb: 2 }}>
-            Take notes using AI
-          </CustomButton>
+                                          <Box sx={{ position: "relative", zIndex: 1 }}>
+                                            <CustomButton startIcon={<AutoAwesomeIcon />} sx={{ mb: 2 }}>
+                                              Take notes using AI
+                                            </CustomButton>
 
-          <Typography variant="h3">Think Better with Reflect</Typography>
-          <Typography sx={{ color: "#acabb1b1", fontSize: "20px", mt: 1 }}>
-            Never miss a note, idea or Connection
-          </Typography>
-          <Button
-            sx={{
-              bgcolor: "#712FFF3D",
-              color: "#F4F0FF",
-              mt: 3,
-              px: 3,
-              border: 1,
-              borderColor: "#F4F0FF",
-              borderRadius: 3,
-              fontWeight: 500,
-              textTransform: "none",
-            }}
-          >
-            Start your 14-day trail
-          </Button>
-        </Box>
-      </Box>
+                                            <Typography variant="h3">Think Better with Reflect</Typography>
+                                            <Typography sx={{ color: "#acabb1b1", fontSize: "20px", mt: 1 }}>
+                                              Never miss a note, idea or Connection
+                                            </Typography>
+                                            <Button
+                                              sx={{
+                                                bgcolor: "#712FFF3D",
+                                                color: "#F4F0FF",
+                                                mt: 3,
+                                                px: 3,
+                                                border: 1,
+                                                borderColor: "#F4F0FF",
+                                                borderRadius: 3,
+                                                fontWeight: 500,
+                                                textTransform: "none",
+                                              }}
+                                            >
+                                              Start your 14-day trail
+                                            </Button>
+                                          </Box>
+                                        </Box>
 
-      {/* Footer Section */}
-                                                <Box
-                                    width="100%"
-                                    px={{ xs: 1.25, sm: 2, md: 3, lg: 4, xl: 6 }}
-                                    py={4}
-                                    bgcolor="#030014"
-                                    sx={{ boxSizing: 'border-box' }}
-                                  >
-                                    {/* Main Footer Content */}
-                                    <Box
-                                      display="flex"
-                                      flexDirection={{ xs: "column", xl: "row" }}
-                                      justifyContent="space-between"
-                                      alignItems="flex-start"
-                                      maxWidth={{ lg: "310px", xl:"50%" }} // 👈 Core fix
-                                      width="100%"
-                                      mx="auto"
-                                      gap={4}
-                                    >
-                                      {/* Left: Logo + Social Icons */}
-                                      <Box
-                                        display="flex"
-                                        flexDirection={{ xs: "row", xl: "column" }}
-                                        justifyContent="space-between"
-                                        alignItems={{ xs: "center", xl: "flex-start" }}
-                                        gap={{ xs: 2, xl: 3 }}
-                                        width={{ xs: "100%", xl: "auto" }}
-                                        height={{xl:"210px",}}
-                                        minWidth={{ lg: "200px" }}
-                                      >
-                                        <Box display="flex" alignItems="center" gap={1}>
+                                        {/* Footer Section */}
+                                        <Box
+                                          width="100%"
+                                          px={{ xs: 3, sm: 4, md: 6, lg: 8, xl: 12 }}
+                                          py={{ xs: 4, lg: 6, xl: 8 }}
+                                          bgcolor="#030014"
+                                          sx={{ boxSizing: 'border-box' }}
+                                        >
+                                          {/* Main Footer Content */}
                                           <Box
-                                            component="img"
-                                            src={logo}
-                                            alt="Reflect logo"
-                                            sx={{
-                                              width: "30px",
-                                              height: "30px",
-                                              borderRadius: "8px",
-                                              flexShrink: 0
-                                            }}
-                                          />
-                                          <Typography fontWeight={600} color="#fff" fontSize="20px" noWrap>
-                                            Reflect
-                                          </Typography>
-                                        </Box>
+                                            display="flex"
+                                            flexDirection={{ xs: "column", lg: "row" }}
+                                            justifyContent="space-between"
+                                            alignItems={{ xs: "flex-start", lg: "flex-start" }}
+                                            maxWidth="1600px"
+                                            width="100%"
+                                            height="100%"
+                                            mx="auto"
+                                            gap={{ xs: 4, lg: 12, xl: 16 }}
+                                          >
+                                            {/* Left: Logo + Social Icons */}
+                                            <Box
+                                              display="flex"
+                                              flexDirection="column"
+                                              justifyContent="space-between"
+                                              height="100%"
+                                              gap={{ xs: 3, lg: 15, xl: 5 }}
+                                              minWidth={{ xs: "100%", lg: "220px", xl: "280px" }}
+                                            >
+                                              <Box display="flex" alignItems="center" gap={2}>
+                                                <Box
+                                                  component="img"
+                                                  src={logo}
+                                                  alt="Reflect logo"
+                                                  sx={{
+                                                    width: { xs: "30px", xl: "36px" },
+                                                    height: { xs: "30px", xl: "36px" },
+                                                    borderRadius: "8px",
+                                                  }}
+                                                />
+                                                <Typography fontWeight={600} color="#fff" fontSize={{ xs: "20px", xl: "24px" }}>
+                                                  Reflect
+                                                </Typography>
+                                              </Box>
 
-                                        <Box display="flex" gap={2}>
-                                          <DiscordIcon sx={{ color: "#aaa" }} />
-                                          <TwitterIcon sx={{ color: "#aaa" }} />
-                                        </Box>
-                                      </Box>
+                                              <Box display="flex" gap={{ xs: 3, xl: 4 }}>
+                                                <DiscordIcon sx={{ 
+                                                  color: "#aaa", 
+                                                  cursor: "pointer", 
+                                                  fontSize: { xs: "24px", xl: "28px" },
+                                                  "&:hover": { color: "white" } 
+                                                }} />
+                                                <TwitterIcon sx={{ 
+                                                  color: "#aaa", 
+                                                  cursor: "pointer",
+                                                  fontSize: { xs: "24px", xl: "28px" },
+                                                  "&:hover": { color: "white" } 
+                                                }} />
+                                              </Box>
+                                            </Box>
 
-                                      {/* Right: Footer Links */}
-                                      <Box
-                                        display="grid"
-                                        gridTemplateColumns={{
-                                          xs: "repeat(2, minmax(120px, 1fr))",
-                                          xl: "repeat(3, minmax(150px, 1fr))",
-                                        }}
-                                        gap={4}
-                                        flex={1}
-                                        width="100%"
-                                        textAlign="left"
-                                      >
-                                        <FooterColumn>
-                                          <FooterTitle>Product</FooterTitle>
-                                          <FooterLink href="#">Features</FooterLink>
-                                          <FooterLink href="#">Integrations</FooterLink>
-                                          <FooterLink href="#">Pricing</FooterLink>
-                                          <FooterLink href="#">Changelog</FooterLink>
-                                          <FooterLink href="#">Roadmap</FooterLink>
-                                        </FooterColumn>
+                                            {/* Right: Footer Links */}
+                                            <Box
+                                              display="grid"
+                                              gridTemplateColumns={{
+                                                xs: "repeat(2, 1fr)",
+                                                sm: "repeat(3, 1fr)",
+                                              }}
+                                              gap={{ xs: 4, sm: 6, lg: 16, xl: 16 }}
+                                              
+                                            >
+                                              <FooterColumn>
+                                                <FooterTitle sx={{ fontSize: { xs: "14px", xl: "16px" } }}>
+                                                  Product
+                                                </FooterTitle>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Features
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Integrations
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Pricing
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Changelog
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Roadmap
+                                                </FooterLink>
+                                              </FooterColumn>
 
-                                        <FooterColumn>
-                                          <FooterTitle>Company</FooterTitle>
-                                          <FooterLink href="#">Our team</FooterLink>
-                                          <FooterLink href="#">Our values</FooterLink>
-                                          <FooterLink href="#">Blog</FooterLink>
-                                        </FooterColumn>
+                                              <FooterColumn>
+                                                <FooterTitle sx={{ fontSize: { xs: "14px", xl: "16px" } }}>
+                                                  Company
+                                                </FooterTitle>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Our team
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Our values
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Blog
+                                                </FooterLink>
+                                              </FooterColumn>
 
-                                        <FooterColumn>
-                                          <FooterTitle>Resources</FooterTitle>
-                                          <FooterLink href="#">Downloads</FooterLink>
-                                          <FooterLink href="#">Documentation</FooterLink>
-                                          <FooterLink href="#">Contact</FooterLink>
-                                        </FooterColumn>
-                                      </Box>
+                                              <FooterColumn>
+                                                <FooterTitle sx={{ fontSize: { xs: "14px", xl: "16px" } }}>
+                                                  Resources
+                                                </FooterTitle>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Downloads
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Documentation
+                                                </FooterLink>
+                                                <FooterLink href="#" sx={{ fontSize: { xs: "13px", xl: "14px" } }}>
+                                                  Contact
+                                                </FooterLink>
+                                              </FooterColumn>
+                                            </Box>
+                                          </Box>
+
+                                          <Divider sx={{ 
+                                            backgroundColor: "#1a1a2e", 
+                                            my: { xs: 4, lg: 6, xl: 8 } 
+                                          }} />
+
+                                          {/* Newsletter Section */}
+                                        <Box
+                                    display="flex"
+                                    flexDirection={{ xs: "column", lg: "row" }}
+                                    justifyContent="space-between"
+                                    alignItems={{ xs: "flex-start", lg: "center" }}
+                                    gap={{ xs: 4, lg: 8, xl: 12 }}
+                                    maxWidth="1600px"
+                                    width="100%"
+                                    mx="auto"
+                                  >
+                                    <Box width={{ xs: "100%", lg: "50%" }}>
+                                      <FooterTitle sx={{ 
+                                        fontSize: { xs: "18px", lg: "20px", xl: "22px" }, 
+                                        mb: 1 
+                                      }}>
+                                        Get free note-taking workflows
+                                      </FooterTitle>
+                                      <Typography variant="body2" sx={{ 
+                                        color: "#efedfd99", 
+                                        fontSize: { xs: "14px", xl: "16px" } 
+                                      }}>
+                                        In our weekly newsletter.
+                                      </Typography>
                                     </Box>
 
-                                    <Divider sx={{ backgroundColor: "#1a1a2e", my: 4 }} />
-
-                                    {/* Newsletter Section */}
                                     <Box
                                       display="flex"
-                                      flexDirection={{ xs: "column", lg: "column" ,xl:"row"}}
-                                      justifyContent="space-between"
-                                      alignItems={{ xs: "flex-start", lg: "center" }}
-                                      gap={{xs:2, xl:"11rem" ,lg:2}}
-                                      maxWidth={{ xl: "max-content", lg: "310px" }}
-                                      width="100%"
-                                      mx="auto"
-                                      px={{  sm: 3, lg: 0 }}
+                                      gap={2}
+                                      flexDirection={{ xs: "column", sm: "row" }}
+                                      width={{ xs: "100%", lg: "50%" }}
+                                      justifyContent={{ lg: "flex-end", xl: "flex-end" }}
                                     >
-                                      <Box width="100%" textAlign={{ xs: "left", lg: "start" }}>
-                                        <FooterTitle sx={{ fontSize: { xs: "18px", lg: "22px" } }}>
-                                          Get free note-taking workflows
-                                        </FooterTitle>
-                                        <Typography variant="body2" sx={{ color: "#efedfd99", fontSize: "14px" }}>
-                                          In our weekly newsletter.
-                                        </Typography>
-                                      </Box>
-
-                                      <Box
-                                        display="flex"
-                                        gap={2}
-                                        flexDirection={{ xs: "column", sm: "row", lg: "column" ,xl:"row"}}
-                                        justifyContent={{ xs: "flex-start", sm: "center" }}
-                                        alignItems={{ xs: "stretch", sm: "center" }}
-                                        width={{ xs: "100%", lg: "auto"  }}
-                                      >
+                                      <Box sx={{ 
+                                        width: "100%",
+                                        maxWidth: { xs: "100%", sm: "400px", xl: "500px" },
+                                        flexShrink: 0
+                                      }}>
                                         <TextField
                                           variant="outlined"
                                           placeholder="Enter your email"
                                           size="small"
+                                          fullWidth
                                           sx={{
-                                            width: { xs: "100%", sm: "280px", lg: "300px" },
                                             backgroundColor: "#9382FF0A",
                                             borderRadius: "4px",
                                             "& .MuiOutlinedInput-root": {
@@ -238,54 +286,68 @@ const Footer = () => {
                                               },
                                               "& input": {
                                                 color: "white",
+                                                fontSize: { xs: "14px", xl: "16px" },
+                                                padding: { xs: "10px 14px", xl: "12px 16px" },
+                                                "&::placeholder": {
+                                                  opacity: 0.8,
+                                                },
                                               },
                                             },
                                           }}
                                         />
-                                        <Button
-                                          variant="contained"
-                                          gap={2}
-                                          sx={{
-                                            width: { xs: "100%", sm: "auto", lg: "100%", xl:"max-content" },
-                                            px: { xs: 0, sm: 4, lg: 4 },
-                                            backgroundColor: "#9382FF0A",
-                                            color: "#fff",
-                                            border: "1px solid rgba(212, 212, 213, 0.6)",
-                                            whiteSpace: "nowrap",
-                                            flexShrink: 0,
-                                          }}
-                                        >
-                                          Subscribe
-                                        </Button>
                                       </Box>
+                                      <Button
+                                        variant="contained"
+                                        sx={{
+                                          px: { xs: 3, xl: 4 },
+                                          py: { xs: 1, xl: 1.2 },
+                                          backgroundColor: "#9382FF0A",
+                                          color: "#fff",
+                                          border: "1px solid rgba(212, 212, 213, 0.6)",
+                                          whiteSpace: "nowrap",
+                                          fontSize: { xs: "14px", xl: "16px" },
+                                          "&:hover": {
+                                            backgroundColor: "rgba(147, 130, 255, 0.2)",
+                                          },
+                                        }}
+                                      >
+                                        Subscribe
+                                      </Button>
                                     </Box>
+                                  </Box>  
 
-                                    <Divider sx={{ backgroundColor: "#1a1a2e", my: 4 }} />
+                                          <Divider sx={{ 
+                                            backgroundColor: "#1a1a2e", 
+                                            my: { xs: 4, lg: 6, xl: 8 } 
+                                          }} />
 
-                                    {/* Bottom Links */}
-                                    <Box
-                                      display="flex"
-                                      flexDirection={{ xs: "column", sm: "row", lg: "column" ,xl:"row" }}
-                                      justifyContent="space-between"
-                                      alignItems="center"
-                                      gap={2}
-                                      maxWidth={{ xl: "50%", lg: "310px"  }}
-                                      mx="auto"
-                                      width="100%"
-                                      textAlign="center"
-                                    >
-                                      <Typography variant="body2" color="#efedfd99">
-                                        Privacy Policy &nbsp; - &nbsp; Terms of Conditions
-                                      </Typography>
-                                      <Typography variant="body2" color="#efedfd99">
-                                        Reflect App, LLC. All rights reserved.
-                                      </Typography>
-                                    </Box>
-                                  </Box>
+                                          {/* Bottom Links */}
+                                          <Box
+                                            display="flex"
+                                            flexDirection={{ xs: "column-reverse", sm: "row" }}
+                                            justifyContent="space-between"
+                                            alignItems="center"
+                                            gap={2}
+                                            maxWidth="1600px"
+                                            width="100%"
+                                            mx="auto"
+                                          >
+                                            <Typography variant="body2" sx={{ 
+                                              color: "#efedfd99",
+                                              fontSize: { xs: "12px", xl: "14px" }
+                                            }}>
+                                              Reflect App, LLC. All rights reserved.
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ 
+                                              color: "#efedfd99",
+                                              fontSize: { xs: "12px", xl: "14px" }
+                                            }}>
+                                              Privacy Policy &nbsp; - &nbsp; Terms of Conditions
+                                            </Typography>
+                                          </Box>
+                                        </Box>
+                                      </FooterContainer>
+                                    );
+                                  };
 
-
-    </FooterContainer>
-  );
-};
-
-export default Footer;
+                                  export default Footer;
