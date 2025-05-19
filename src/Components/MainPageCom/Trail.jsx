@@ -11,7 +11,6 @@ const TrailBox = styled(Box)(({ theme }) => ({
     backgroundColor: "#030014",
     [theme.breakpoints.down('sm')]: {
         height: 'auto',
-
     }
 }));
 
@@ -42,6 +41,7 @@ const Trail = () => {
                             },
                             fontSize: { xs: '0.8rem', sm: '1rem' },
                             padding: { xs: '6px 16px', sm: '8px 24px' },
+                            fontWeight: 500
                         }}
                     >
                         Get Access
@@ -51,7 +51,8 @@ const Trail = () => {
                         variant="h4"
                         sx={{
                             width: '100%',
-                            fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                            fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' },
+                            fontWeight: 500
                         }}
                     >
                         We like keeping things simple
@@ -61,7 +62,8 @@ const Trail = () => {
                         variant="h5"
                         sx={{
                             width: '100%',
-                            fontSize: { xs: '1rem', sm: '1.25rem', md: '1.5rem' },
+                            fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' },
+                            fontWeight: 500
                         }}
                     >
                         One plan, one price.
@@ -79,15 +81,16 @@ const Trail = () => {
                         <Typography
                             variant="h2"
                             sx={{
-                                fontSize: { xs: '2.5rem', sm: '3rem' },
+                                fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' },
                                 color: 'white',
+                                fontWeight: 500
                             }}
                         >
                             $10
                         </Typography>
                         <Box sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
-                            <Typography variant="body1">/month</Typography>
-                            <Typography variant="body2">(billed annually)</Typography>
+                            <Typography variant="body1" sx={{ fontWeight: 500 }}>/month</Typography>
+                            <Typography variant="body2" sx={{ fontWeight: 500 }}>(billed annually)</Typography>
                         </Box>
                     </Box>
                 </Box>

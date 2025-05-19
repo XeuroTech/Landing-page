@@ -1,10 +1,7 @@
-import { Box, Button, Typography, } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 
 const ReflectOtherApp = () => {
-    // const theme = useTheme();
-    // const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
     const integrations = [
         {
             name: "Zapier",
@@ -59,7 +56,8 @@ const ReflectOtherApp = () => {
                         borderRadius: 2,
                         fontSize: { xs: "0.7rem", sm: "0.8rem", md: "1rem" },
                         px: 2,
-                        py: 1
+                        py: 1,
+                        fontWeight: 500
                     }}
                 >
                     Integration
@@ -67,8 +65,9 @@ const ReflectOtherApp = () => {
                 <Typography
                     variant="h3"
                     sx={{
-                        fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
-                        lineHeight: 1.2
+                        fontSize: { xs: "40px", sm: "40px", md: "56px", lg: "56px" },
+                        lineHeight: 1.2,
+                        fontWeight: 500
                     }}
                 >
                     Use Reflect with other apps
@@ -98,7 +97,7 @@ const ReflectOtherApp = () => {
                         width: { xs: 60, sm: 80, md: 100 },
                         zIndex: 1,
                         mb: { xs: 4, sm: 0 },
-                        alignSelf: 'center' // Ensure logo is centered on mobile
+                        alignSelf: 'center'
                     }}
                 />
 
@@ -163,6 +162,7 @@ const IntegrationCard = ({ name, description, icon, iconHeight }) => (
                 sx={{
                     fontSize: { xs: "0.9rem", sm: "1.1rem" },
                     textTransform: "none",
+                    fontWeight: 500
                 }}
             >
                 {name}
@@ -172,6 +172,7 @@ const IntegrationCard = ({ name, description, icon, iconHeight }) => (
                 sx={{
                     fontSize: { xs: "0.7rem", sm: "0.9rem" },
                     opacity: 0.8,
+                    fontWeight: 500
                 }}
             >
                 {description}
