@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery, Button } from '@mui/material';
 import React from 'react';
 import meeting from '/src/assets/homepic/meeting.png';
 
@@ -38,6 +38,7 @@ const Meeting = () => {
                 }}
             >
                 <Box sx={{ pt: { xs: '16rem', sm: '20rem', md: '25rem' }, maxWidth: 'max-content' }}>
+                    <Button variant='outlined' sx={{ borderColor: 'white', borderRadius: 5, color: 'white' }}>Meetings</Button>
                     <Typography
                         variant="h3"
                         sx={{
