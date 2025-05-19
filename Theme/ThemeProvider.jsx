@@ -1,3 +1,4 @@
+
 import React from "react";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -6,10 +7,48 @@ import testimonolsimg from "../src/assets/mainpage/testimonals.png";
 // import { keyframes } from '@emotion/react';
 import { styled } from "@mui/material/styles";
 
+import React from 'react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles'; // Correct import path
+import ridar from '../src/assets/mainpage/rideeeer.png'
+import { Button } from '@mui/material';
+
+
+
+
+   export  const CustomButton = styled(Button)(({ theme }) => ({
+          background: 'linear-gradient(to right,rgb(180, 101, 104) , white)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        border: "1px solid #007aff",
+        borderRadius: "32px",
+        fontSize: "12px",
+        textTransform: "none",
+        padding: theme.spacing(1, 3),
+        color: "#007aff",
+        "&:hover": {
+          backgroundColor: "rgba(0, 122, 255, 0.1)",
+          color: "white",
+        },
+      }));
+
+
+
+      
+
+
+
+
+
+
+
+
 export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
   return (
     <Paper
       elevation={elevation}
+
       sx={{
         width: "250px",
         height: "150px",
@@ -30,9 +69,27 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 
         // Existing wheat vertical line (KEEP)
         "&::before": {
+    sx={(theme) => ({
+        width: '250px',
+        height: '150px',
+        backgroundColor: '#030014',
+        color: 'white',
+        borderRadius: 0,
+        p: 1,
+        px: 3,
+        position: 'relative',
+        transition: 'background-color 0.3s ease, transform 0.3s ease',
+
+        '&:hover': {
+          backgroundColor: '#120014',
+        },
+
+        '&::before': {
+
           content: '""',
           position: "absolute",
           left: 0,
+
           top: "50%",
           transform: "translateY(-50%)",
           width: "1px",
@@ -42,6 +99,19 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 
         // New MINIMAL left border using gradient
         "&::after": {
+
+          top: '50%',
+          transform: 'translateY(-50%)',
+          width: '1px',
+          height: '20px',
+          backgroundColor: 'wheat',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
+        },
+
+        '&::after': {
+
           content: '""',
           position: "absolute",
           top: 0,
@@ -51,6 +121,7 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           background:
             "linear-gradient(to bottom, transparent, white, transparent)",
           opacity: 0.1,
+
           pointerEvents: "none",
         },
 
@@ -68,6 +139,16 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           pointerEvents: "none",
         },
       }}
+
+          pointerEvents: 'none',
+          [theme.breakpoints.down('sm')]: {
+            display: 'none',
+          },
+        },
+
+        ...sx, // allow external overrides
+      })}
+
     >
       {children}
     </Paper>
@@ -139,6 +220,7 @@ export const TestimonialCard = ({
   );
 };
 
+
 export const GradientBorderBox = styled(Box)(() => ({
   position: "relative",
   width: "max-content",
@@ -173,6 +255,54 @@ export const GradientBorderBox = styled(Box)(() => ({
     boxShadow: "inset 0 0 6px rgba(229, 156, 255, 0.2)",
   },
 }));
+
+
+
+
+// export const CustomDiv = styled(Box)({
+
+//   width: "100%",
+//   height: "max-content",
+//   display: "flex",
+//   flexDirection: "row",
+//   justifyContent: "start",
+//   overflowX: "auto",
+//   gap: "10px",
+//   paddingTop: "5px",
+//   backgroundColor: 'rgba(8,6,36,0.9)',
+//   paddingBottom: '5px',
+//   boxSizing: "border-box",
+//   '&::-webkit-scrollbar': {
+//     display: 'none'
+//   },
+//   scrollBehavior: 'smooth',
+//   '&:hover': {
+//     animation: 'scrollAnimation 1s linear infinite',
+//     cursor: 'grab'
+//   },
+//   '@keyframes scrollAnimation': {
+//     '0%': { scrollLeft: 0 },
+//     '100%': { scrollLeft: '100%' }
+//   }
+// });
+
+
+   
+// export const CustomDiv = styled(Box)(() => ({
+//   width: "100%",
+//   // display: "grid",
+//   // gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+//   gap: 0, // no space between cards
+//   backgroundColor: 'rgba(8,6,36,0.9)',
+//   padding: "10px",
+//   boxSizing: "border-box",
+//   overflowY: "auto", // vertical scroll if needed
+//   scrollbarWidth: "none",
+//   // "&::-webkit-scrollbar": { display: "none" },
+// }));
+
+
+
 
 export const CustomDiv = styled(Box)({
   width: "100%",
@@ -240,6 +370,7 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
 
 /////ridar
 
+
 export const RadarBackground = styled("div")({
   position: "absolute",
   width: "100%",
@@ -250,6 +381,28 @@ export const RadarBackground = styled("div")({
   backgroundPosition: "center",
   backgroundColor: "#030014", // fallback background
 });
+
+=======
+
+/////ridar 
+
+
+export const RadarBackground = styled('div')({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  backgroundImage: `
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(3, 0, 20, 0.85) 50% ),
+    url(${ridar})
+  `,
+  backgroundSize: 'cover, contain', // first background image cover, second image 'contain'
+  backgroundRepeat: 'no-repeat, no-repeat',
+  backgroundPosition: 'center, center',
+  backgroundColor: '#030014',
+});
+
+
+
 
 export const RadarContainer = styled(Box)({
   position: "relative",
