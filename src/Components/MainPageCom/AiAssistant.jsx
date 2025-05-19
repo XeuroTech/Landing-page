@@ -44,36 +44,36 @@ const AiAssistant = ({
             title: "Save your own",
             description: "custom prompts"
         }
-
     ]
 }) => {
-    //   const theme = useTheme();
-    //  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     return (
         <Box sx={{ backgroundColor: "#030014", color: 'white' }}>
             {/* Header Section */}
             <Container sx={{ textAlign: 'center', py: { xs: 4, md: 8 } }}>
                 <Button
                     variant="outlined"
-
                     sx={{
                         borderRadius: '32px',
                         color: '#007aff',
                         borderColor: '#007aff',
                         textTransform: 'none',
-                        mb: 2
+                        mb: 2,
+                        fontWeight: 500
                     }}
                 >
                     {headerButtonText}
                 </Button>
 
-                <Typography variant="h4" sx={{ fontWeight: 600, mb: 2 }}>
+                <Typography variant="h4" sx={{
+                    fontWeight: 500,
+                    mb: 2,
+                    fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                }}>
                     {headerTitle}
                 </Typography>
 
-                <Typography variant="body1">{headerDescription1}</Typography>
-                <Typography variant="body1">{headerDescription2}</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 500 }}>{headerDescription1}</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 500 }}>{headerDescription2}</Typography>
             </Container>
 
             {/* Background Section with Card */}
@@ -99,13 +99,22 @@ const AiAssistant = ({
                     borderRadius: 3,
                     textAlign: 'start'
                 }}>
+
                     <Box sx={{ display: 'flex', gap: { xs: 1, sm: 3, md: 5 } }}>
                         <Typography variant="h6" gutterBottom>
                             {cardTitle}
                         </Typography>
                         <Button size='small' sx={{ fontSize: 7 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
+                    <Box sx={{ display: 'flex', gap: 5 }}>
+                        <Typography variant="h6" gutterBottom sx={{
+                            fontWeight: 500,
+                            fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                        }}>
+                            {cardTitle}
+                        </Typography>
+                        <Button size='small' sx={{ fontSize: 10, fontWeight: 500 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
                     </Box>
-                    <Typography>
+                    <Typography sx={{ fontWeight: 500 }}>
                         {cardDescription}
                     </Typography>
                 </Box>
@@ -113,7 +122,10 @@ const AiAssistant = ({
 
             {/* Section Title */}
             <Container sx={{ textAlign: 'center', my: 8 }}>
-                <Typography variant="h4" sx={{ fontWeight: 600 }}>
+                <Typography variant="h4" sx={{
+                    fontWeight: 500,
+                    fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                }}>
                     {sectionTitle}
                 </Typography>
             </Container>
@@ -146,15 +158,13 @@ const AiAssistant = ({
                                 }}
                             >
                                 {feature.icon}
-                                <Typography variant="h6">{feature.title}</Typography>
-                                <Typography variant="body2">{feature.description}</Typography>
+                                <Typography variant="h6" sx={{ fontWeight: 500 }}>{feature.title}</Typography>
+                                <Typography variant="body2" sx={{ fontWeight: 500 }}>{feature.description}</Typography>
                             </Box>
                         </Grid>
                     ))}
                 </Grid>
             </Container>
-
-
         </Box>
     );
 };
