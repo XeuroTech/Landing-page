@@ -151,4 +151,4 @@ const CalendarSliceUI = () => {
   );
 };
 
-export default CalendarSliceUI;
+export default CalendarSliceUI
