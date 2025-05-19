@@ -44,7 +44,7 @@ const ReflectOtherApp = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                width: { xs: "90%", sm: "70%", md: "27%" },
+                width: { xs: "90%", sm: "70%", md: "35%" },
                 textAlign: "center",
                 mb: { xs: 4, sm: 8 },
                 gap: { xs: 2, sm: 3 }
@@ -67,7 +67,7 @@ const ReflectOtherApp = () => {
                     sx={{
                         fontSize: { xs: "40px", sm: "40px", md: "56px", lg: "56px" },
                         lineHeight: 1.2,
-                        fontWeight: 500
+                        fontWeight: 500, width: "90%"
                     }}
                 >
                     Use Reflect with other apps
