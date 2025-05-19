@@ -17,6 +17,16 @@ import navlogo from '../assets/navlogo.png';
 
 function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
+    const [scrolled, setScrolled] = React.useState(false);
+
+    // Scroll listener to toggle background
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 10);
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const GradientButton = styled(Button)(({ theme }) => ({
         background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
@@ -56,7 +66,6 @@ function Navbar() {
                 py: 3,
             }}
         >
-            {/* Close button at top right */}
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <IconButton
                     color="inherit"
@@ -67,7 +76,6 @@ function Navbar() {
                 </IconButton>
             </Box>
 
-            {/* Navigation items */}
             <List sx={{ flexGrow: 1 }}>
                 {navItems.map((text) => (
                     <ListItem key={text} disablePadding sx={{ mb: 1 }}>
@@ -83,7 +91,6 @@ function Navbar() {
                 </ListItem>
             </List>
 
-            {/* Create Account button at bottom */}
             <Box sx={{ px: 2, pb: 2 }}>
                 <GradientButton
                     fullWidth
@@ -99,17 +106,21 @@ function Navbar() {
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar
-                position="static"
+                position="fixed"
                 sx={{
-                    background: 'rgba(8, 6, 36, 1)',
+                    transition: 'background-color 0.3s ease',
+                    backgroundColor: scrolled ? 'rgba(8, 6, 36, 0.7)' : 'rgba(8, 6, 36, 1)',
+                    backdropFilter: scrolled ? 'blur(10px)' : 'none',
                     boxShadow: 'none',
                 }}
             >
-                <Toolbar sx={{
-                    minHeight: { xs: 56, sm: 64 },
-                    paddingX: { xs: 2, sm: 4, md: 6 }
-                }}>
-                    {/* Logo and brand name - always visible */}
+                <Toolbar
+                    sx={{
+                        minHeight: { xs: 56, sm: 64 },
+                        paddingX: { xs: 2, sm: 4, md: 6 }
+                    }}
+                >
+                    {/* Logo */}
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
@@ -127,7 +138,6 @@ function Navbar() {
                         />
                         <Typography
                             variant="h6"
-                            component="div"
                             sx={{
                                 fontWeight: 'bold',
                                 fontSize: { xs: '1rem', sm: '1.25rem' },
@@ -138,9 +148,9 @@ function Navbar() {
                         </Typography>
                     </Box>
 
-                    {/* Desktop Navigation - center aligned */}
+                    {/* Center Nav */}
                     <Box sx={{
-                        display: { xs: 'none', sm: 'inline-flex' }, // inline-flex keeps width to content
+                        display: { xs: 'none', sm: 'inline-flex' },
                         justifyContent: 'center',
                         border: 1,
                         borderColor: 'white',
@@ -148,7 +158,7 @@ function Navbar() {
                         borderRadius: 7,
                         gap: { sm: 1, md: 2, lg: 3 },
                         px: 2,
-                        mx: 'auto' // 👈 This centers the Box horizontally
+                        mx: 'auto'
                     }}>
                         {navItems.map((item) => (
                             <Button
@@ -157,7 +167,8 @@ function Navbar() {
                                 sx={{
                                     fontSize: { sm: '0.8rem', md: '0.9rem' },
                                     whiteSpace: 'nowrap',
-                                    textTransform: 'none'
+                                    textTransform: 'none',
+                                    fontWeight: 500
                                 }}
                             >
                                 {item}
@@ -165,8 +176,7 @@ function Navbar() {
                         ))}
                     </Box>
 
-
-                    {/* Desktop Auth Buttons - right aligned */}
+                    {/* Desktop Auth Buttons */}
                     <Box sx={{
                         display: { xs: 'none', sm: 'flex' },
                         alignItems: 'center',
@@ -178,7 +188,7 @@ function Navbar() {
                             color="inherit"
                             sx={{
                                 fontSize: '0.9rem',
-                                whiteSpace: 'nowrap'
+                                fontWeight: 500
                             }}
                         >
                             Login
@@ -191,7 +201,7 @@ function Navbar() {
                         </GradientButton>
                     </Box>
 
-                    {/* Mobile Auth Buttons - center aligned */}
+                    {/* Mobile Auth Buttons */}
                     <Box sx={{
                         display: { xs: 'flex', sm: 'none' },
                         position: 'absolute',
@@ -205,7 +215,8 @@ function Navbar() {
                             size="small"
                             sx={{
                                 fontSize: '0.8rem',
-                                minWidth: 'auto'
+                                minWidth: 'auto',
+                                fontWeight: 500
                             }}
                         >
                             Login
@@ -217,6 +228,7 @@ function Navbar() {
                             sx={{
                                 fontSize: '0.6rem',
                                 minWidth: 'auto',
+                                fontWeight: 500,
                                 background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
                                 '&:hover': {
                                     background: 'linear-gradient(180deg, #945BEF 0%, #2A2399 100%)',
@@ -227,7 +239,7 @@ function Navbar() {
                         </Button>
                     </Box>
 
-                    {/* Mobile Menu Button - right aligned */}
+                    {/* Mobile Menu Button */}
                     <IconButton
                         size="large"
                         edge="end"
@@ -244,7 +256,7 @@ function Navbar() {
                 </Toolbar>
             </AppBar>
 
-            {/* Mobile Drawer */}
+            {/* Drawer */}
             <Drawer
                 anchor="right"
                 variant="temporary"
