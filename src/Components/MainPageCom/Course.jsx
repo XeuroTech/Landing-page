@@ -1,79 +1,124 @@
-import { Box, Button, Typography } from '@mui/material';
-import { Bs0Circle } from "react-icons/bs";
-import React from 'react';
+import { Box, Button, styled, Typography } from '@mui/material';
+import coursepic from '../../assets/homepic/aiassistant.png';
 
-const TrailImage = () => {
-    const textStyle = {
-        fontSize: { xs: '0.6rem', sm: '0.7rem', md: '1rem' },
-        fontWeight: 500,
+const Course = ({
+    aboutButtonText = "About",
+    headingText = "We're an indie team dotted across the globe",
+    missionText1 = "Our mission is to improve the way people think by making a jolly good note-taking app.",
+    valuesButtonText = "See Our Values",
+    academyButtonText = "Academy",
+    academyHeading = "Learn how to take great notes at our academy",
+    academyDescription = "Master the principles of note-taking in Reflect's free online Academy.",
+    courseButtonText = "Take The Course",
+
+    // Style Props
+    headingWidth = { sm: '45%', md: '65%', },
+    missionWidth = { sm: '45%', md: '60%' },
+    imageHeight = { xs: '50vh', sm: '60vh', md: '100vh' },
+    contentSpacing = { xs: 2, sm: 3, md: 4 },
+    containerMaxWidth = '1200px'
+}) => {
+    const CourseDiv = styled(Box)(() => ({
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
-        gap: 1,
-    };
+        width: '100%',
+        backgroundColor: "#030014",
+        color: 'white'
+    }));
 
     return (
-        <Box
-            sx={{
-                backgroundImage: 'url(src/assets/homepic/trail.png)',
-                backgroundPosition: 'bottom center',
-                backgroundSize: 'contain',
-                backgroundRepeat: 'no-repeat',
-                height: '100vh',
-                width: '100%',
-                color: 'white',
-                gap: { xs: 2, sm: 2, md: 5 },
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-            }}
-        >
+        <CourseDiv>
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: { xs: 'column', sm: 'column', md: 'row' },
-                    justifyContent: 'center',
-                    gap: { xs: 1, sm: 2, md: 6 },
-                    textAlign: { xs: 'center', md: 'center' },
-                    px: { xs: 2, sm: 4 },
+                    flexDirection: 'column',
+                    gap: contentSpacing,
+                    maxWidth: containerMaxWidth,
+                    width: '100%',
+                    px: { xs: 2, sm: 3, md: 4 }
                 }}
             >
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <Typography sx={textStyle}><Bs0Circle /> Networked note-taking</Typography>
-                    <Typography sx={textStyle}><Bs0Circle /> Chrome and Safari web clipper</Typography>
-                    <Typography sx={textStyle}><Bs0Circle /> Kindle offline sync</Typography>
+                {/* About Button */}
+                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Button variant='outlined' sx={{ borderRadius: 5, borderColor: 'white', color: 'white', fontWeight: 500 }}>
+                        {aboutButtonText}
+                    </Button>
                 </Box>
 
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                    <Typography sx={textStyle}><Bs0Circle /> End to end encryption</Typography>
-                    <Typography sx={textStyle}><Bs0Circle /> Kindle highlights sync</Typography>
-                    <Typography sx={textStyle}><Bs0Circle /> iOS app</Typography>
-                </Box>
-            </Box>
-
-            <Box>
-                <Button
+                {/* Heading & Mission */}
+                <Box
                     sx={{
-                        fontSize: {
-                            xs: '40px',
-                            sm: '40px',
-                            md: '56px',
-                            lg: '56px'
-                        },
-                        fontWeight: 500,
-                        borderColor: 'white',
-                        color: 'white',
-                        '&:hover': {
-                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                            borderColor: 'white',
-                        },
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
                     }}
-                    variant='outlined'
                 >
-                    Start Your 14 Day Trial
-                </Button>
+                    <Typography variant='h3' sx={{
+                        width: headingWidth,
+                        fontWeight: 500,
+                        fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                    }}>
+                        {headingText}
+                    </Typography>
+                    <Typography sx={{ width: missionWidth, mt: 2, fontWeight: 500 }}>
+                        {missionText1}
+                    </Typography>
+                </Box>
+
+                {/* Values Button */}
+                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
+                    <Button variant='outlined' sx={{ borderRadius: 2, borderColor: 'white', color: 'white', fontWeight: 500 }}>
+                        {valuesButtonText}
+                    </Button>
+                </Box>
+
+                {/* Academy Section with Image */}
+                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 50 }}>
+                    <Box
+                        sx={{
+                            backgroundImage: `url(${coursepic})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'contain',
+                            height: imageHeight,
+                            width: '80%',
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                flexDirection: 'column',
+                                textAlign: 'center',
+                            }}
+                        >
+                            <Button variant='outlined' sx={{ borderRadius: 5, color: 'white', borderColor: 'white', fontWeight: 500 }}>
+                                {academyButtonText}
+                            </Button>
+                            <Typography variant='h3' sx={{
+                                width: { sm: '50%', md: '65%' },
+                                pt: 1,
+                                fontWeight: 500,
+                                fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                            }}>
+                                {academyHeading}
+                            </Typography>
+                            <Typography sx={{ width: { sm: '50%', md: '40%' }, pt: 1, fontWeight: 500 }}>
+                                {academyDescription}
+                            </Typography>
+                            <Button variant='outlined' sx={{ borderRadius: 2, color: 'white', borderColor: 'white', mt: 2, fontWeight: 500 }}>
+                                {courseButtonText}
+                            </Button>
+                        </Box>
+                    </Box>
+                </Box>
             </Box>
-        </Box>
+        </CourseDiv>
     );
 };
 
-export default TrailImage;
+export default Course;
