@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme, useMediaQuery, Button } from '@mui/material';
+import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
 import React from 'react';
 import meeting from '/src/assets/homepic/meeting.png';
 
@@ -34,35 +34,22 @@ const Meeting = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     textAlign: 'center',
-                    px: 2,
+                    px: 2, // padding for small screens
                 }}
             >
                 <Box sx={{ pt: { xs: '16rem', sm: '20rem', md: '25rem' }, maxWidth: 'max-content' }}>
-                    <Button variant='outlined' sx={{ borderColor: 'white', borderRadius: 5, color: 'white' }}>Meetings</Button>
                     <Typography
-                        variant="h3"
+                        variant={isMobile ? 'h5' : 'h3'}
                         sx={{
                             color: 'white',
                             mb: 2,
-                            fontWeight: 500,
-                            fontSize: {
-                                xs: '40px',
-                                sm: '40px',
-                                md: '56px',
-                                lg: '56px',
-                            },
+                            fontWeight: 600,
                         }}
                     >
                         Get more out <br />
                         of your meetings
                     </Typography>
-                    <Typography
-                        sx={{
-                            color: 'white',
-                            fontSize: { xs: '0.9rem', md: '1rem' },
-                            fontWeight: 500,
-                        }}
-                    >
+                    <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', md: '1rem' } }}>
                         Keep track of all your meetings and what was discussed.<br />
                         Import events quickly with our Google Calendar and Outlook integrations.
                     </Typography>

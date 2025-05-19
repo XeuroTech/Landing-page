@@ -28,6 +28,7 @@ const NotesIdea = () => {
     textTransform: "none",
     "&:hover": {
       backgroundColor: "rgba(0, 122, 255, 0.1)",
+
     },
   }));
 
