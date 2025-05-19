@@ -54,12 +54,12 @@ const TrailImage = () => {
                 <Button
                     sx={{
                         fontSize: {
-                            xs: '40px',
-                            sm: '40px',
-                            md: '56px',
-                            lg: '56px'
+                            xs: '14px',
+                            sm: '14px',
+                            md: '14px',
+                            lg: '14px'
                         },
-                        fontWeight: 500,
+
                         borderColor: 'white',
                         color: 'white',
                         '&:hover': {
