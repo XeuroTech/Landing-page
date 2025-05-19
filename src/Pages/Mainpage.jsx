@@ -18,8 +18,10 @@ const Mainpage = () => {
             <NotesIdea />
             <CardComponents />
 
-              <FrictionThoughts />
+           
               <Testiminols/>
+
+                 <FrictionThoughts />
              
             {/* <AiAssistant /> */}
             {/* <BrainPower />
