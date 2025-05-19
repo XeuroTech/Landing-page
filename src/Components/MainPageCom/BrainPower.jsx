@@ -13,7 +13,7 @@ const BrainPower = () => {
                 width: '100%',
                 backgroundColor: "#030014",
                 position: 'relative',
-                pt: { xs: '12rem', md: '20rem' }, // responsive top padding
+                pt: { xs: '12rem', md: '20rem' },
                 overflow: 'hidden'
             }}
         >
@@ -35,7 +35,7 @@ const BrainPower = () => {
                     justifyContent: 'center',
                     gap: 4,
                     textAlign: 'center',
-                    px: 2 // Padding for small screens
+                    px: 2
                 }}
             >
                 {/* Button */}
@@ -49,7 +49,8 @@ const BrainPower = () => {
                         mt: { xs: 8, md: 20 },
                         px: 3,
                         py: 1.5,
-                        fontSize: { xs: '0.75rem', md: '1rem' }
+                        fontSize: { xs: '0.75rem', md: '1rem' },
+                        fontWeight: 500
                     }}
                 >
                     All your notes, connected
@@ -58,12 +59,22 @@ const BrainPower = () => {
                 {/* Text below button */}
                 <Box sx={{ maxWidth: 'max-content' }}>
                     <Typography
-                        variant={isMobile ? 'h4' : 'h2'}
-                        sx={{ color: 'white', mb: 2, fontWeight: 600 }}
+                        sx={{
+                            color: 'white',
+                            mb: 2,
+                            fontWeight: 500,
+                            fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                        }}
                     >
                         Give your brain superpowers
                     </Typography>
-                    <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', md: '1rem' } }}>
+                    <Typography
+                        sx={{
+                            color: 'white',
+                            fontSize: { xs: '0.9rem', md: '1rem' },
+                            fontWeight: 500
+                        }}
+                    >
                         Mirror the way your mind works by associating notes through backlinks.<br />
                         Reflect builds you a second brain that you can reference anytime.
                     </Typography>

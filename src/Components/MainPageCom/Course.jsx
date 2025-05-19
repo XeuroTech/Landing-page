@@ -41,7 +41,7 @@ const Course = ({
             >
                 {/* About Button */}
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                    <Button variant='outlined' sx={{ borderRadius: 5, borderColor: 'white', color: 'white' }}>
+                    <Button variant='outlined' sx={{ borderRadius: 5, borderColor: 'white', color: 'white', fontWeight: 500 }}>
                         {aboutButtonText}
                     </Button>
                 </Box>
@@ -56,17 +56,21 @@ const Course = ({
                         textAlign: 'center'
                     }}
                 >
-                    <Typography variant='h3' sx={{ width: headingWidth }}>
+                    <Typography variant='h3' sx={{
+                        width: headingWidth,
+                        fontWeight: 500,
+                        fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                    }}>
                         {headingText}
                     </Typography>
-                    <Typography sx={{ width: missionWidth, mt: 2 }}>
+                    <Typography sx={{ width: missionWidth, mt: 2, fontWeight: 500 }}>
                         {missionText1}
                     </Typography>
                 </Box>
 
                 {/* Values Button */}
                 <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
-                    <Button variant='outlined' sx={{ borderRadius: 2, borderColor: 'white', color: 'white' }}>
+                    <Button variant='outlined' sx={{ borderRadius: 2, borderColor: 'white', color: 'white', fontWeight: 500 }}>
                         {valuesButtonText}
                     </Button>
                 </Box>
@@ -92,16 +96,21 @@ const Course = ({
                                 textAlign: 'center',
                             }}
                         >
-                            <Button variant='outlined' sx={{ borderRadius: 5, color: 'white', borderColor: 'white' }}>
+                            <Button variant='outlined' sx={{ borderRadius: 5, color: 'white', borderColor: 'white', fontWeight: 500 }}>
                                 {academyButtonText}
                             </Button>
-                            <Typography variant='h3' sx={{ width: { sm: '50%', md: '65%' }, fontSize: { sm: '30px', xs: '25px', md: '50px' }, pt: 1 }}>
+                            <Typography variant='h3' sx={{
+                                width: { sm: '50%', md: '65%' },
+                                pt: 1,
+                                fontWeight: 500,
+                                fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                            }}>
                                 {academyHeading}
                             </Typography>
-                            <Typography sx={{ width: { sm: '50%', md: '40%' }, pt: 1 }}>
+                            <Typography sx={{ width: { sm: '50%', md: '40%' }, pt: 1, fontWeight: 500 }}>
                                 {academyDescription}
                             </Typography>
-                            <Button variant='outlined' sx={{ borderRadius: 2, color: 'white', borderColor: 'white', mt: 2 }}>
+                            <Button variant='outlined' sx={{ borderRadius: 2, color: 'white', borderColor: 'white', mt: 2, fontWeight: 500 }}>
                                 {courseButtonText}
                             </Button>
                         </Box>
