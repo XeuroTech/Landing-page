@@ -34,22 +34,34 @@ const Meeting = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     textAlign: 'center',
-                    px: 2, // padding for small screens
+                    px: 2,
                 }}
             >
                 <Box sx={{ pt: { xs: '16rem', sm: '20rem', md: '25rem' }, maxWidth: 'max-content' }}>
                     <Typography
-                        variant={isMobile ? 'h5' : 'h3'}
+                        variant="h3"
                         sx={{
                             color: 'white',
                             mb: 2,
-                            fontWeight: 600,
+                            fontWeight: 500,
+                            fontSize: {
+                                xs: '40px',
+                                sm: '40px',
+                                md: '56px',
+                                lg: '56px',
+                            },
                         }}
                     >
                         Get more out <br />
                         of your meetings
                     </Typography>
-                    <Typography sx={{ color: 'white', fontSize: { xs: '0.9rem', md: '1rem' } }}>
+                    <Typography
+                        sx={{
+                            color: 'white',
+                            fontSize: { xs: '0.9rem', md: '1rem' },
+                            fontWeight: 500,
+                        }}
+                    >
                         Keep track of all your meetings and what was discussed.<br />
                         Import events quickly with our Google Calendar and Outlook integrations.
                     </Typography>

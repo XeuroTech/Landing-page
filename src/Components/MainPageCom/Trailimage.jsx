@@ -5,9 +5,10 @@ import React from 'react';
 const TrailImage = () => {
     const textStyle = {
         fontSize: { xs: '0.6rem', sm: '0.7rem', md: '1rem' },
+        fontWeight: 500,
         display: 'flex',
         alignItems: 'center',
-        gap: 1
+        gap: 1,
     };
 
     return (
@@ -52,7 +53,13 @@ const TrailImage = () => {
             <Box>
                 <Button
                     sx={{
-                        fontSize: { xs: '0.5rem', sm: '0.6rem', md: '1rem' },
+                        fontSize: {
+                            xs: '40px',
+                            sm: '40px',
+                            md: '56px',
+                            lg: '56px'
+                        },
+                        fontWeight: 500,
                         borderColor: 'white',
                         color: 'white',
                         '&:hover': {
