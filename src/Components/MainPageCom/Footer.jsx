@@ -207,7 +207,7 @@ const Footer = () => {
                                       mx="auto"
                                       px={{  sm: 3, lg: 0 }}
                                     >
-                                      <Box width="100%" textAlign={{ xs: "left", lg: "center" }}>
+                                      <Box width="100%" textAlign={{ xs: "left", lg: "start" }}>
                                         <FooterTitle sx={{ fontSize: { xs: "18px", lg: "22px" } }}>
                                           Get free note-taking workflows
                                         </FooterTitle>
