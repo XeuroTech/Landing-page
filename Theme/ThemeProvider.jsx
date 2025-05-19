@@ -6,13 +6,14 @@ import ridar from "../src/assets/mainpage/rideeeer.png";
 import testimonolsimg from "../src/assets/mainpage/testimonals.png";
 // import { keyframes } from '@emotion/react';
 import { styled } from "@mui/material/styles";
+import { Button } from "@mui/material";
 
-import React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles'; // Correct import path
-import ridar from '../src/assets/mainpage/rideeeer.png'
-import { Button } from '@mui/material';
+// import React from 'react';
+// import Box from '@mui/material/Box';
+// import Paper from '@mui/material/Paper';
+// import { styled } from '@mui/material/styles'; // Correct import path
+// import ridar from '../src/assets/mainpage/rideeeer.png'
+// import { Button } from '@mui/material';
 
 
 
@@ -43,12 +44,10 @@ import { Button } from '@mui/material';
 
 
 
-
 export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
   return (
     <Paper
       elevation={elevation}
-
       sx={{
         width: "250px",
         height: "150px",
@@ -62,34 +61,13 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
 
         "&:hover": {
           backgroundColor: "#1a1a1a",
-         
         },
 
-        ...sx,
-
-        // Existing wheat vertical line (KEEP)
+        // Vertical wheat line
         "&::before": {
-    sx={(theme) => ({
-        width: '250px',
-        height: '150px',
-        backgroundColor: '#030014',
-        color: 'white',
-        borderRadius: 0,
-        p: 1,
-        px: 3,
-        position: 'relative',
-        transition: 'background-color 0.3s ease, transform 0.3s ease',
-
-        '&:hover': {
-          backgroundColor: '#120014',
-        },
-
-        '&::before': {
-
           content: '""',
           position: "absolute",
           left: 0,
-
           top: "50%",
           transform: "translateY(-50%)",
           width: "1px",
@@ -97,63 +75,45 @@ export const DarkPaper = ({ children, elevation = 1, sx = {} }) => {
           backgroundColor: "wheat",
         },
 
-        // New MINIMAL left border using gradient
+        // Gradient left border
         "&::after": {
-
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '1px',
-          height: '20px',
-          backgroundColor: 'wheat',
-          [theme.breakpoints.down('sm')]: {
-            display: 'none',
-          },
-        },
-
-        '&::after': {
-
           content: '""',
           position: "absolute",
           top: 0,
           left: 0,
           width: "0.5px",
           height: "100%",
-          background:
-            "linear-gradient(to bottom, transparent, white, transparent)",
+          background: "linear-gradient(to bottom, transparent, white, transparent)",
           opacity: 0.1,
-
           pointerEvents: "none",
+          display: {
+            xs: "none",
+            sm: "block",
+          },
         },
 
-        // New MINIMAL bottom border using gradient
-        "&::afterBottom": {
+        // Bottom gradient border
+        "& .bottom-border": {
           content: '""',
           position: "absolute",
           bottom: 0,
           left: 0,
           width: "100%",
           height: "0.5px",
-          background:
-            "linear-gradient(to right, transparent, white, transparent)",
+          background: "linear-gradient(to right, transparent, white, transparent)",
           opacity: 0.1,
           pointerEvents: "none",
         },
-      }}
-
-          pointerEvents: 'none',
-          [theme.breakpoints.down('sm')]: {
-            display: 'none',
-          },
-        },
 
         ...sx, // allow external overrides
-      })}
-
+      }}
     >
+      <div className="bottom-border" />
       {children}
     </Paper>
   );
 };
+
 
 ///testimonal compnents
 
@@ -371,18 +331,18 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
 /////ridar
 
 
-export const RadarBackground = styled("div")({
-  position: "absolute",
-  width: "100%",
-  height: "100%",
-  backgroundImage: `url(${ridar})`,
-  backgroundSize: "contain", // fit full image without cropping
-  backgroundRepeat: "no-repeat",
-  backgroundPosition: "center",
-  backgroundColor: "#030014", // fallback background
-});
+// export const RadarBackground = styled("div")({
+//   position: "absolute",
+//   width: "100%",
+//   height: "100%",
+//   backgroundImage: `url(${ridar})`,
+//   backgroundSize: "contain", // fit full image without cropping
+//   backgroundRepeat: "no-repeat",
+//   backgroundPosition: "center",
+//   backgroundColor: "#030014", // fallback background
+// });
 
-=======
+
 
 /////ridar 
 
