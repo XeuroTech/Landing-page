@@ -17,16 +17,15 @@ const Mainpage = () => {
     return (
         <>
             <Navbar />
-            <NotesIdea />
-            <CardComponents />
+
             <AiAssistant />
             <BrainPower />
 
             <Meeting />
             <ReflectOtherApp />
-            {/* <FrictionThoughts /> */}
+
             <Trail />
-            <Testiminols />
+
             <Course />
 
 
