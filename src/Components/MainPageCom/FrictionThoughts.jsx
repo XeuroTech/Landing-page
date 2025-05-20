@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
-import { styled, keyframes,Grid } from "@mui/system";
+// import Grid from "@mui/material/Unstable_Grid2";
+import { styled, keyframes, Grid } from "@mui/system";
 import HttpsIcon from "@mui/icons-material/Https";
 import MobileFriendlyIcon from "@mui/icons-material/MobileFriendly";
 import logo from "../../assets/mainpage/logo.png";
@@ -94,7 +95,7 @@ const FrictionThoughts = () => {
         position: "absolute",
         width: "100%",
         height: "1000px",
-        zIndex: 10, 
+        zIndex: 10,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

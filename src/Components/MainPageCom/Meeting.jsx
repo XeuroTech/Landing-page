@@ -4,7 +4,6 @@ import meeting from '/src/assets/homepic/meeting.png';
 
 const Meeting = () => {
 
-
     return (
         <Box
             sx={{

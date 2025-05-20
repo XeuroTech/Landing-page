@@ -345,7 +345,7 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
 
 
 
-/////ridar 
+/////ridar
 
 
 export const RadarBackground = styled('div')({
