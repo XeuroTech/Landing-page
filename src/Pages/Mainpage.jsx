@@ -12,14 +12,23 @@ import Navbar from '../Components/NavBar.jsx'
 import Calender from '../Components/MainPageCom/Calender.jsx'
 
 
+
 const Mainpage = () => {
     return (
         <>
             <NotesIdea />
             <CardComponents />
 
+
               <FrictionThoughts />
               <Calender/>
+
+           
+              <Testiminols/> 
+
+                 <FrictionThoughts />
+             
+
             {/* <AiAssistant /> */}
             {/* <BrainPower />
             <Meeting /> */}
