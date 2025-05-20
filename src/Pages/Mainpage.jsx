@@ -15,14 +15,13 @@ import ReflectOtherApp from '../Components/MainPageCom/ReflectOtherApp.jsx'
 const Mainpage = () => {
     return (
         <>
-            <Navbar />
-            <NotesIdea />
-            <CardComponents />
+
+
             <AiAssistant />
             <BrainPower />
             <Meeting />
             <Trail />
-            <Course />
+
             <ReflectOtherApp />
             {/* <FrictionThoughts /> */}
 

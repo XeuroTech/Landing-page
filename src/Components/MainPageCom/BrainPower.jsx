@@ -20,7 +20,7 @@ const BrainPower = () => {
             {/* Background Image */}
             <Box sx={{
                 backgroundImage: `url(${brainPowerImage})`,
-                backgroundSize: 'cover',
+                backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center',
                 width: '100%',
@@ -28,7 +28,7 @@ const BrainPower = () => {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                opacity: 0.5,
+
                 zIndex: 1,
                 filter: 'blur(1px)'
             }} />
@@ -41,7 +41,7 @@ const BrainPower = () => {
                 justifyContent: 'center',
                 gap: { xs: 2.5, sm: 3, md: 4 },
                 textAlign: 'center',
-                px: { xs: 2, sm: 3 },
+
                 position: 'relative',
                 zIndex: 2,
                 width: '100%',

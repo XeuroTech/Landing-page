@@ -35,12 +35,12 @@ const AiAssistant = ({
             description: "items from your meeting notes"
         },
         {
-            icon: <AbcIcon />,
+            icon: <AbcIcon sx={{ fontSize: 32 }} />,
             title: "Chat with your notes",
             description: "to find and organize information"
         },
         {
-            icon: <CommentBankIcon />,
+            icon: <CommentBankIcon sx={{ fontSize: 32 }} />,
             title: "Save your own",
             description: "custom prompts"
         }
@@ -67,7 +67,7 @@ const AiAssistant = ({
                 <Typography variant="h4" sx={{
                     fontWeight: 500,
                     mb: 2,
-                    fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' }
                 }}>
                     {headerTitle}
                 </Typography>
@@ -99,20 +99,23 @@ const AiAssistant = ({
                     borderRadius: 3,
                     textAlign: 'start'
                 }}>
-
-                    <Box sx={{ display: 'flex', gap: { xs: 1, sm: 3, md: 5 } }}>
-                        <Typography variant="h6" gutterBottom>
-                            {cardTitle}
-                        </Typography>
-                        <Button size='small' sx={{ fontSize: 7 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
-                    <Box sx={{ display: 'flex', gap: 5 }}>
+                    <Box sx={{ display: 'flex', gap: 5, alignItems: 'center' }}>
                         <Typography variant="h6" gutterBottom sx={{
                             fontWeight: 500,
-                            fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                            fontSize: { xs: '1.5rem', md: '2rem' }
                         }}>
                             {cardTitle}
                         </Typography>
-                        <Button size='small' sx={{ fontSize: 10, fontWeight: 500 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
+                        <Button
+                            size='small'
+                            sx={{
+                                fontSize: '0.875rem',
+                                fontWeight: 500
+                            }}
+                            startIcon={<AutoAwesomeIcon />}
+                        >
+                            click to see magic
+                        </Button>
                     </Box>
                     <Typography sx={{ fontWeight: 500 }}>
                         {cardDescription}
@@ -124,7 +127,7 @@ const AiAssistant = ({
             <Container sx={{ textAlign: 'center', my: 8 }}>
                 <Typography variant="h4" sx={{
                     fontWeight: 500,
-                    fontSize: { xs: '40px', sm: '40px', md: '56px', lg: '56px' }
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' }
                 }}>
                     {sectionTitle}
                 </Typography>
@@ -140,10 +143,9 @@ const AiAssistant = ({
                     {features.map((feature, index) => (
                         <Grid
                             item
-                            xs={1}
-                            sm={1}
-                            md={1}
-                            lg={3}
+                            xs={12}
+                            sm={6}
+                            md={4}
                             key={index}
                             sx={{ display: 'flex', justifyContent: 'center' }}
                         >
@@ -154,10 +156,13 @@ const AiAssistant = ({
                                     alignItems: "center",
                                     textAlign: "center",
                                     gap: 1.5,
-                                    p: 5
+                                    p: 5,
+                                    maxWidth: 300
                                 }}
                             >
-                                {feature.icon}
+                                <Box sx={{ color: '#007aff' }}>
+                                    {feature.icon}
+                                </Box>
                                 <Typography variant="h6" sx={{ fontWeight: 500 }}>{feature.title}</Typography>
                                 <Typography variant="body2" sx={{ fontWeight: 500 }}>{feature.description}</Typography>
                             </Box>
