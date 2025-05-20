@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import ridar from "../src/assets/mainpage/rideeeer.png";
 import testimonolsimg from "../src/assets/mainpage/testimonals.png";
+// import image from "../src/assets/mainpage/reflectImage.jpg";
 // import { keyframes } from '@emotion/react';
 import { styled } from "@mui/material/styles";
 import { Button } from "@mui/material";
@@ -391,3 +392,27 @@ export const CardDiv = ({ children, elevation = 1, sx = {} }) => {
     </Paper>
   );
 };
+
+
+
+
+// footer
+
+
+// foterbg.js or styled-components file
+
+
+export const FoterBg = styled(Box)(({ image }) => ({
+  position: "absolute",
+  top: "100%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  height: "900px",
+  width: "1000px",
+  backgroundImage: `url(${image})`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  zIndex: 0,
+}));
+
