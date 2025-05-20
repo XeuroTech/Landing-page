@@ -1,9 +1,12 @@
-import { Box, Button, styled, Typography } from "@mui/material";
+import { Box, Button, styled, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import reflectImage from "../../assets/mainpage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
- import { CustomButton } from "../../../Theme/ThemeProvider";
+import { CustomButton } from "../../../Theme/ThemeProvider";
 const NotesIdea = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm && md"));
+
   const CenteredDiv = styled(Box)(({ theme }) => ({
     width: "100%",
     height: "max-content",
@@ -16,10 +19,10 @@ const NotesIdea = () => {
     color: theme.palette.common.white,
   }));
 
- 
+
 
   return (
-    <Box sx={{backgroundColor: "#030014"  }}>
+    <Box sx={{ backgroundColor: "#030014" }}>
       <Box
         sx={{
           height: "max-content",
@@ -32,25 +35,40 @@ const NotesIdea = () => {
           Take notes using AI
         </CustomButton>
       </Box>
+
       <Box
         sx={{
           minHeight: "100vh",
           backgroundImage: `url(${reflectImage})`,
           backgroundSize: "cover",
-
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           padding: 2,
         }}
       >
-        <CenteredDiv sx={{ gap: "10px" }}>
-          <CenteredDiv>
-            <Typography variant="h3"> Think Better with Reflect</Typography>
-          </CenteredDiv>
-          
-          <CenteredDiv sx={{ color: "#acabb1b1", fontSize: "20px" }}>
-            Never miss a note ,idea or Connection
-          </CenteredDiv>
+        <CenteredDiv sx={{ gap: "10px", px: 2 }}>
+          <Typography
+            variant={isMobile ? "h4" : "h2"}
+            sx={{
+              maxWidth: "90%",
+              fontWeight: 600,
+              lineHeight: 1.2,
+              color: "white",
+            }}
+          >
+            Think better with Reflect
+          </Typography>
+
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#acabb1b1",
+              fontSize: { xs: "14px", sm: "16px" },
+              maxWidth: "90%",
+            }}
+          >
+            Never miss a note, idea, or connection
+          </Typography>
         </CenteredDiv>
       </Box>
     </Box>

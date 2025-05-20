@@ -19,25 +19,25 @@ import { Button } from "@mui/material";
 
 
 
-   export  const CustomButton = styled(Button)(({ theme }) => ({
-          background: 'linear-gradient(to right,rgb(180, 101, 104) , white)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        border: "1px solid #007aff",
-        borderRadius: "32px",
-        fontSize: "12px",
-        textTransform: "none",
-        padding: theme.spacing(1, 3),
-        color: "#007aff",
-        "&:hover": {
-          backgroundColor: "rgba(0, 122, 255, 0.1)",
-          color: "white",
-        },
-      }));
+export const CustomButton = styled(Button)(({ theme }) => ({
+  background: 'linear-gradient(to right,rgb(180, 101, 104) , white)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  border: "1px solid #007aff",
+  borderRadius: "32px",
+  fontSize: "12px",
+  textTransform: "none",
+  padding: theme.spacing(1, 3),
+  color: "#007aff",
+  "&:hover": {
+    backgroundColor: "rgba(0, 122, 255, 0.1)",
+    color: "white",
+  },
+}));
 
 
 
-      
+
 
 
 
@@ -248,7 +248,7 @@ export const GradientBorderBox = styled(Box)(() => ({
 // });
 
 
-   
+
 // export const CustomDiv = styled(Box)(() => ({
 //   width: "100%",
 //   // display: "grid",
@@ -345,7 +345,7 @@ export const DarkPaperr = ({ children, elevation = 1, sx = {} }) => {
 
 
 
-/////ridar 
+/////ridar
 
 
 export const RadarBackground = styled('div')({
