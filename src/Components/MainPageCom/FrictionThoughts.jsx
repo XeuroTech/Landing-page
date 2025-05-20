@@ -94,7 +94,7 @@ const FrictionThoughts = () => {
         position: "absolute",
         width: "100%",
         height: "1000px",
-        zIndex: 10, // ✅ This line is added to fix stacking
+        zIndex: 10, 
         display: "flex",
         justifyContent: "center",
         alignItems: "center",

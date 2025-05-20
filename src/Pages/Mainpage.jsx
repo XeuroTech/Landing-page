@@ -25,7 +25,6 @@ const Mainpage = () => {
 
                 <FrictionThoughts />
               <Testiminols/>
-            
 
               <Calender/>
               
