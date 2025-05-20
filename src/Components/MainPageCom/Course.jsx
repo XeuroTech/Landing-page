@@ -36,7 +36,7 @@ const Course = ({
                     gap: contentSpacing,
                     maxWidth: containerMaxWidth,
                     width: '100%',
-                    px: { xs: 2, sm: 3, md: 4 },
+
                     py: { xs: 3, sm: 4 }
                 }}
             >
