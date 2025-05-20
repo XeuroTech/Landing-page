@@ -46,6 +46,8 @@ const Mainpage = () => {
 
 
 
+            <FrictionThoughts />
+            <Testiminols />
 
 
 

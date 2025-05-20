@@ -8,6 +8,7 @@ import logo from "../../assets/mainpage/logo.png";
 import ridar from "../../assets/mainpage/rideeeer.png";
 import { CustomButton, DarkPaper } from "../../../Theme/ThemeProvider";
 
+
 // Card content
 const cardarr = [
   {
@@ -28,29 +29,29 @@ const cardarr = [
 
 // Radar scanner animation
 const scan = keyframes`
-                          0% {
-                            transform: rotate(0deg);
-                            filter: blur(3px);
-                            opacity: 1;
-                          }
-                          25% {
-                            filter: blur(3px);
-                            opacity: 0.6;
-                          }
-                          50% {
-                            filter: blur(4px);
-                            opacity: 0.4;
-                          }
-                          75% {
-                            filter: blur(3px);
-                            opacity: 0.6;
-                          }
-                          100% {
-                            transform: rotate(360deg);
-                            filter: blur(0px);
-                            opacity: 1;
-                          }
-                                          `;
+  0% {
+    transform: rotate(0deg);
+    filter: blur(3px);
+    opacity: 1;
+  }
+  25% {
+    filter: blur(3px);
+    opacity: 0.6;
+  }
+  50% {
+    filter: blur(4px);
+    opacity: 0.4;
+  }
+  75% {
+    filter: blur(3px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: rotate(360deg);
+    filter: blur(0px);
+    opacity: 1;
+  }
+`;
 
 const Scanner = styled("div")({
   position: "absolute",
@@ -61,14 +62,14 @@ const Scanner = styled("div")({
     position: "absolute",
     top: "50%",
     left: "50%",
-    width: "39%", // Longer sweep outward
+    width: "39%",
     height: "2px",
     transformOrigin: "left center",
     transform: "rotate(0deg)",
     animation: `${scan} 5s linear infinite`,
     background:
       "linear-gradient(to right, white, #3498db 50%, transparent 100%)",
-    boxShadow: "0 0 10px 4px rgba(52, 152, 219, 0.3)", // blue glow
+    boxShadow: "0 0 10px 4px rgba(52, 152, 219, 0.3)",
   },
 });
 
@@ -78,9 +79,9 @@ export const RadarBackground = styled("div")({
   height: "100%",
   overflowX: "hidden",
   backgroundImage: `
-                                          linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(3, 0, 20, 0.85) 50%),
-                                          url(${ridar})
-                                        `,
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(3, 0, 20, 0.85) 50%),
+    url(${ridar})
+  `,
   backgroundSize: "cover, contain",
   backgroundRepeat: "no-repeat, no-repeat",
   backgroundPosition: "center, center",
@@ -94,7 +95,7 @@ const FrictionThoughts = () => {
         position: "absolute",
         width: "100%",
         height: "1000px",
-        // overflow: "hidden",
+        zIndex: 10,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -111,8 +112,6 @@ const FrictionThoughts = () => {
           top: "50%",
           color: "white",
           width: "100%",
-          // px: 2,
-          fontWeight: "bold",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -179,8 +178,8 @@ const FrictionThoughts = () => {
                 },
               }}
             >
-              Collect your web snippets, Kindle highlights and important links –
-              all in one place. Then quickly find them again from any device.
+              Collect your web snippets, Kindle highlights and important links
+              – all in one place. Then quickly find them again from any device.
             </Typography>
 
             {/* Card Grid */}
@@ -189,7 +188,7 @@ const FrictionThoughts = () => {
                 container
                 spacing={3}
                 justifyContent="center"
-                alignItems="stretch" // makes cards equal height if needed
+                alignItems="stretch"
               >
                 {cardarr.map((item) => (
                   <Grid
