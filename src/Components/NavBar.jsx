@@ -27,6 +27,7 @@ function Navbar() {
         textTransform: 'none',
         fontWeight: 500,
         padding: theme.spacing(1, 3),
+        borderRadius: '6px',
     }));
 
     const handleDrawerToggle = () => {
@@ -56,7 +57,6 @@ function Navbar() {
                 py: 3,
             }}
         >
-            {/* Close button at top right */}
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <IconButton
                     color="inherit"
@@ -67,7 +67,6 @@ function Navbar() {
                 </IconButton>
             </Box>
 
-            {/* Navigation items */}
             <List sx={{ flexGrow: 1 }}>
                 {navItems.map((text) => (
                     <ListItem key={text} disablePadding sx={{ mb: 1 }}>
@@ -83,7 +82,6 @@ function Navbar() {
                 </ListItem>
             </List>
 
-            {/* Create Account button at bottom */}
             <Box sx={{ px: 2, pb: 2 }}>
                 <GradientButton
                     fullWidth
@@ -97,26 +95,32 @@ function Navbar() {
     );
 
     return (
-
-        <Box sx={{ flexGrow: 1, width: 'max-content', flexShrink: 1 }}>
+        <Box sx={{ flexGrow: 1, width: '100%', overflowX: 'hidden' }}>
             <AppBar
-
+                position="static"
                 sx={{
                     background: 'rgba(8, 6, 36, 1)',
                     boxShadow: 'none',
-
+                    width: '100%',
                 }}
             >
-                <Toolbar sx={{
-                    minHeight: { xs: 56, sm: 64 },
-                    paddingX: { xs: 2, sm: 4, md: 6 }
-                }}>
-                    {/* Logo and brand name - always visible */}
+                <Toolbar
+                    sx={{
+                        minHeight: { xs: 56, sm: 64 },
+                        px: { xs: 2, sm: 3, md: 4 },
+                        maxWidth: '1440px',
+                        margin: '0 auto',
+                        width: '95%',
+                        justifyContent: 'space-between',
+                    }}
+                >
+                    {/* Logo */}
                     <Box sx={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
-                        mr: 2
+                        mr: 2,
+                        flexShrink: 0
                     }}>
                         <Box
                             component='img'
@@ -129,7 +133,6 @@ function Navbar() {
                         />
                         <Typography
                             variant="h6"
-                            component="div"
                             sx={{
                                 fontWeight: 'bold',
                                 fontSize: { xs: '1rem', sm: '1.25rem' },
@@ -140,26 +143,28 @@ function Navbar() {
                         </Typography>
                     </Box>
 
-                    {/* Desktop Navigation - center aligned */}
+                    {/* Desktop Navigation - hidden on mobile */}
                     <Box sx={{
-                        display: { xs: 'none', sm: 'inline-flex' }, // inline-flex keeps width to content
+                        display: { xs: 'none', md: 'flex' },
                         justifyContent: 'center',
-                        border: 1,
-                        borderColor: 'white',
-                        fontWeight: 500,
+                        border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: 7,
-                        gap: { sm: 1, md: 2, lg: 3 },
+                        gap: 2,
                         px: 2,
-                        mx: 'auto' // 👈 This centers the Box horizontally
+                        mx: 'auto',
+                        flexGrow: 0
                     }}>
                         {navItems.map((item) => (
                             <Button
                                 key={item}
                                 color="inherit"
                                 sx={{
-                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    fontSize: '0.9rem',
                                     whiteSpace: 'nowrap',
-                                    textTransform: 'none'
+                                    textTransform: 'none',
+                                    fontWeight: 500,
+                                    px: 1,
+                                    minWidth: 'auto'
                                 }}
                             >
                                 {item}
@@ -167,20 +172,22 @@ function Navbar() {
                         ))}
                     </Box>
 
-
-                    {/* Desktop Auth Buttons - right aligned */}
+                    {/* Desktop Auth Buttons - hidden on mobile */}
                     <Box sx={{
-                        display: { xs: 'none', sm: 'flex' },
+                        display: { xs: 'none', md: 'flex' },
                         alignItems: 'center',
                         gap: 2,
-                        ml: 'auto'
+                        ml: 'auto',
+                        flexShrink: 0
                     }}>
                         <Button
                             onClick={handleLoginClick}
                             color="inherit"
                             sx={{
                                 fontSize: '0.9rem',
-                                whiteSpace: 'nowrap'
+                                fontWeight: 500,
+                                whiteSpace: 'nowrap',
+                                paddingRight: "60px"
                             }}
                         >
                             Login
@@ -193,50 +200,14 @@ function Navbar() {
                         </GradientButton>
                     </Box>
 
-                    {/* Mobile Auth Buttons - center aligned */}
-                    <Box sx={{
-                        display: { xs: 'flex', sm: 'none' },
-                        position: 'absolute',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        gap: 1
-                    }}>
-                        <Button
-                            color="inherit"
-                            onClick={handleLoginClick}
-                            size="small"
-                            sx={{
-                                fontSize: '0.8rem',
-                                minWidth: 'auto'
-                            }}
-                        >
-                            Login
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={handleAccountClick}
-                            size="small"
-                            sx={{
-                                fontSize: '0.6rem',
-                                minWidth: 'auto',
-                                background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
-                                '&:hover': {
-                                    background: 'linear-gradient(180deg, #945BEF 0%, #2A2399 100%)',
-                                },
-                            }}
-                        >
-                            Create Account
-                        </Button>
-                    </Box>
-
-                    {/* Mobile Menu Button - right aligned */}
+                    {/* Mobile Menu Button - shown only on mobile */}
                     <IconButton
                         size="large"
                         edge="end"
                         color="inherit"
                         aria-label="menu"
                         sx={{
-                            display: { xs: 'flex', sm: 'none' },
+                            display: { xs: 'flex', md: 'none' },
                             ml: 'auto'
                         }}
                         onClick={handleDrawerToggle}
@@ -256,8 +227,9 @@ function Navbar() {
                     keepMounted: true,
                 }}
                 sx={{
-                    display: { xs: 'block', sm: 'none' },
+                    display: { xs: 'block', md: 'none' },
                     '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
                         width: '100vw',
                         background: 'rgba(8, 6, 36, 1)',
                         color: 'white'
