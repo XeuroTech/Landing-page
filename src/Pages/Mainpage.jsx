@@ -12,14 +12,44 @@ import FrictionThoughts from '../Components/MainPageCom/FrictionThoughts.jsx'
 import Navbar from '../Components/NavBar.jsx'
 
 
+import Trail from '../Components/MainPageCom/Trail.jsx'
+import ReflectOtherApp from '../Components/MainPageCom/ReflectOtherApp.jsx'
+import Testiminols from '../Components/MainPageCom/Testiminols.jsx'
+
+
+
 const Mainpage = () => {
     return (
         <>
+
             <NotesIdea />
 
 
             <CardComponents />
+
+            <Navbar />
+
+
             <AiAssistant />
+            <BrainPower />
+
+            <Meeting />
+            <ReflectOtherApp />
+
+            <Trail />
+
+            <Course />
+
+
+
+
+
+            {/* <AiAssistant /> */}
+            {/* <BrainPower />
+            <Meeting /> */}
+            {/* <CardForDetails /> */}
+
+            {/* <AiAssistant />
             <BrainPower />
             <Meeting />
             <Course />

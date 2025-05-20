@@ -111,6 +111,7 @@ function Navbar() {
 
 
     return (
+
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static" sx={{
                 background: 'rgba(8, 6, 36, 1)',
@@ -134,6 +135,25 @@ function Navbar() {
                     </IconButton>
 
                     {/* Logo with text */}
+
+        <Box sx={{ flexGrow: 1, width: 'max-content', flexShrink: 1 }}>
+            <AppBar
+                position="fixed"
+                sx={{
+                    transition: 'background-color 0.3s ease',
+                    backgroundColor: scrolled ? 'rgba(8, 6, 36, 0.7)' : 'rgba(8, 6, 36, 1)',
+                    backdropFilter: scrolled ? 'blur(10px)' : 'none',
+                    boxShadow: 'none',
+                }}
+            >
+                <Toolbar
+                    sx={{
+                        minHeight: { xs: 56, sm: 64 },
+                        paddingX: { xs: 2, sm: 4, md: 6 }
+                    }}
+                >
+                    {/* Logo */}
+
                     <Box sx={{
                         flexGrow: { xs: 1, sm: 0 },
                         display: 'flex',
