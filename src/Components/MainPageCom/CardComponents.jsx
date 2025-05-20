@@ -6,7 +6,7 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 import PublishedWithChangesIcon from '@mui/icons-material/PublishedWithChanges';
 import SensorOccupiedIcon from '@mui/icons-material/SensorOccupied';
 import SendToMobileOutlinedIcon from '@mui/icons-material/SendToMobileOutlined';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Typography, useMediaQuery, useTheme, keyframes } from '@mui/material';
 
 const cardarr = [
   { id: 1, icon: <MobileFriendlyIcon />, title: "iOS App", description: "Professional iOS app development with great UI/UX." },
@@ -19,33 +19,80 @@ const cardarr = [
   { id: 8, icon: <PublishedWithChangesIcon />, title: "Smart Search", description: "Quickly find notes with intelligent search." },
 ];
 
-const CardComponents = () => {
-  return (
-    <Box sx={{ width: '100%', backgroundColor: "#030014",    overflowX: 'hidden' }}>
-      <Grid
-        container
-        justifyContent="center"
-        alignItems="center"
-       
 
-  
-      >
-        {cardarr.map((item) => (
-          <Grid item key={item.id} xs={12} sm={3} md={3} xl={3}   >
-            <DarkPaper>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: "14px" }}>
-                <Box sx={{ fontSize: 28 }}>{item.icon}</Box>
-                <Typography variant="h6" fontSize={17}>
-                  {item.title}
-                </Typography>
-                <Typography variant="body2" color="gray">
-                  {item.description}
-                </Typography>
-              </Box>
-            </DarkPaper>
-          </Grid>
-        ))}
-      </Grid>
+const scrollX = keyframes`
+  0% { transform: translateX(0%); }
+  10% { transform: translateX(0%); } /* small delay */
+  100% { transform: translateX(-50%); }
+`;
+
+const CardComponents = () => {
+  const theme = useTheme();
+  const isXL = useMediaQuery(theme.breakpoints.up('xl'));
+
+  return (
+    <Box sx={{ width: '100%', backgroundColor: "#030014", py: 4, overflowX: 'hidden' }}>
+      {isXL ? (
+      
+     <Box
+  sx={{
+    display: 'flex',
+    animation: `${scrollX} 20s steps(2) infinite`,
+    width: 'max-content',
+  }}
+>
+          {[...cardarr, ...cardarr].map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                flex: '0 0 auto',
+                width: 250,
+                px: 1,
+              }}
+            >
+              <DarkPaper>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: "14px" }}>
+                  <Box sx={{ fontSize: 28 }}>{item.icon}</Box>
+                  <Typography variant="h6" fontSize={17}>{item.title}</Typography>
+                  <Typography variant="body2" color="gray">{item.description}</Typography>
+                </Box>
+              </DarkPaper>
+            </Box>
+          ))}
+        </Box>
+      ) : (
+        // lg and below: normal wrapped layout
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: 2,
+          }}
+        >
+          {cardarr.map((item) => (
+            <Box
+              key={item.id}
+              sx={{
+                width: {
+                  xs: '100%',
+                  sm: '48%',
+                  md: '30%',
+                  lg: '22%',
+                },
+              }}
+            >
+              <DarkPaper>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: "14px" }}>
+                  <Box sx={{ fontSize: 28 }}>{item.icon}</Box>
+                  <Typography variant="h6" fontSize={17}>{item.title}</Typography>
+                  <Typography variant="body2" color="gray">{item.description}</Typography>
+                </Box>
+              </DarkPaper>
+            </Box>
+          ))}
+        </Box>
+      )}
     </Box>
   );
 };
