@@ -23,13 +23,15 @@ const Mainpage = () => {
             <CardComponents />
 
 
-              <FrictionThoughts />
-
+                <FrictionThoughts />
               <Testiminols/>
-              <Footer/>
+            
 
               <Calender/>
-
+              
+              <Footer/>
+              
+            
 
            
 
