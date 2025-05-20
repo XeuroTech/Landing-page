@@ -35,45 +35,45 @@ const AiAssistant = ({
             description: "items from your meeting notes"
         },
         {
-            icon: <AbcIcon />,
+            icon: <AbcIcon sx={{ fontSize: 32 }} />,
             title: "Chat with your notes",
             description: "to find and organize information"
         },
         {
-            icon: <CommentBankIcon />,
+            icon: <CommentBankIcon sx={{ fontSize: 32 }} />,
             title: "Save your own",
             description: "custom prompts"
         }
-
     ]
 }) => {
-    //   const theme = useTheme();
-    //  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     return (
         <Box sx={{ backgroundColor: "#030014", color: 'white' }}>
             {/* Header Section */}
             <Container sx={{ textAlign: 'center', py: { xs: 4, md: 8 } }}>
                 <Button
                     variant="outlined"
-
                     sx={{
                         borderRadius: '32px',
                         color: '#007aff',
                         borderColor: '#007aff',
                         textTransform: 'none',
-                        mb: 2
+                        mb: 2,
+                        fontWeight: 500
                     }}
                 >
                     {headerButtonText}
                 </Button>
 
-                <Typography variant="h4" sx={{ fontWeight: 600, mb: 2 }}>
+                <Typography variant="h4" sx={{
+                    fontWeight: 500,
+                    mb: 2,
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' }
+                }}>
                     {headerTitle}
                 </Typography>
 
-                <Typography variant="body1">{headerDescription1}</Typography>
-                <Typography variant="body1">{headerDescription2}</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 500 }}>{headerDescription1}</Typography>
+                <Typography variant="body1" sx={{ fontWeight: 500 }}>{headerDescription2}</Typography>
             </Container>
 
             {/* Background Section with Card */}
@@ -99,13 +99,25 @@ const AiAssistant = ({
                     borderRadius: 3,
                     textAlign: 'start'
                 }}>
-                    <Box sx={{ display: 'flex', gap: { xs: 1, sm: 3, md: 5 } }}>
-                        <Typography variant="h6" gutterBottom>
+                    <Box sx={{ display: 'flex', gap: 5, alignItems: 'center' }}>
+                        <Typography variant="h6" gutterBottom sx={{
+                            fontWeight: 500,
+                            fontSize: { xs: '1.5rem', md: '2rem' }
+                        }}>
                             {cardTitle}
                         </Typography>
-                        <Button size='small' sx={{ fontSize: 7 }} startIcon={<AutoAwesomeIcon />}>click to see magic</Button>
+                        <Button
+                            size='small'
+                            sx={{
+                                fontSize: '0.875rem',
+                                fontWeight: 500
+                            }}
+                            startIcon={<AutoAwesomeIcon />}
+                        >
+                            click to see magic
+                        </Button>
                     </Box>
-                    <Typography>
+                    <Typography sx={{ fontWeight: 500 }}>
                         {cardDescription}
                     </Typography>
                 </Box>
@@ -113,7 +125,10 @@ const AiAssistant = ({
 
             {/* Section Title */}
             <Container sx={{ textAlign: 'center', my: 8 }}>
-                <Typography variant="h4" sx={{ fontWeight: 600 }}>
+                <Typography variant="h4" sx={{
+                    fontWeight: 500,
+                    fontSize: { xs: '2rem', sm: '2.5rem', md: '3.5rem' }
+                }}>
                     {sectionTitle}
                 </Typography>
             </Container>
@@ -128,10 +143,9 @@ const AiAssistant = ({
                     {features.map((feature, index) => (
                         <Grid
                             item
-                            xs={1}
-                            sm={1}
-                            md={1}
-                            lg={3}
+                            xs={12}
+                            sm={6}
+                            md={4}
                             key={index}
                             sx={{ display: 'flex', justifyContent: 'center' }}
                         >
@@ -142,19 +156,20 @@ const AiAssistant = ({
                                     alignItems: "center",
                                     textAlign: "center",
                                     gap: 1.5,
-                                    p: 5
+                                    p: 5,
+                                    maxWidth: 300
                                 }}
                             >
-                                {feature.icon}
-                                <Typography variant="h6">{feature.title}</Typography>
-                                <Typography variant="body2">{feature.description}</Typography>
+                                <Box sx={{ color: '#007aff' }}>
+                                    {feature.icon}
+                                </Box>
+                                <Typography variant="h6" sx={{ fontWeight: 500 }}>{feature.title}</Typography>
+                                <Typography variant="body2" sx={{ fontWeight: 500 }}>{feature.description}</Typography>
                             </Box>
                         </Grid>
                     ))}
                 </Grid>
             </Container>
-
-
         </Box>
     );
 };

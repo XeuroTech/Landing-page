@@ -17,16 +17,6 @@ import navlogo from '../assets/navlogo.png';
 
 function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [scrolled, setScrolled] = React.useState(false);
-
-    // Scroll listener to toggle background
-    React.useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 10);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const GradientButton = styled(Button)(({ theme }) => ({
         background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
@@ -37,6 +27,7 @@ function Navbar() {
         textTransform: 'none',
         fontWeight: 500,
         padding: theme.spacing(1, 3),
+        borderRadius: '6px',
     }));
 
     const handleDrawerToggle = () => {
@@ -104,20 +95,23 @@ function Navbar() {
     );
 
     return (
-        <Box sx={{ flexGrow: 1, width: 'max-content', flexShrink: 1 }}>
+        <Box sx={{ flexGrow: 1, width: '100%', overflowX: 'hidden' }}>
             <AppBar
-                position="fixed"
+                position="static"
                 sx={{
-                    transition: 'background-color 0.3s ease',
-                    backgroundColor: scrolled ? 'rgba(8, 6, 36, 0.7)' : 'rgba(8, 6, 36, 1)',
-                    backdropFilter: scrolled ? 'blur(10px)' : 'none',
+                    background: 'rgba(8, 6, 36, 1)',
                     boxShadow: 'none',
+                    width: '100%',
                 }}
             >
                 <Toolbar
                     sx={{
                         minHeight: { xs: 56, sm: 64 },
-                        paddingX: { xs: 2, sm: 4, md: 6 }
+                        px: { xs: 2, sm: 3, md: 4 },
+                        maxWidth: '1440px',
+                        margin: '0 auto',
+                        width: '95%',
+                        justifyContent: 'space-between',
                     }}
                 >
                     {/* Logo */}
@@ -125,7 +119,8 @@ function Navbar() {
                         display: 'flex',
                         alignItems: 'center',
                         gap: 1,
-                        mr: 2
+                        mr: 2,
+                        flexShrink: 0
                     }}>
                         <Box
                             component='img'
@@ -148,27 +143,28 @@ function Navbar() {
                         </Typography>
                     </Box>
 
-                    {/* Center Nav */}
+                    {/* Desktop Navigation - hidden on mobile */}
                     <Box sx={{
-                        display: { xs: 'none', sm: 'inline-flex' },
+                        display: { xs: 'none', md: 'flex' },
                         justifyContent: 'center',
-                        border: 1,
-                        borderColor: 'white',
-                        fontWeight: 500,
+                        border: '1px solid rgba(255,255,255,0.2)',
                         borderRadius: 7,
-                        gap: { sm: 1, md: 2, lg: 3 },
+                        gap: 2,
                         px: 2,
-                        mx: 'auto'
+                        mx: 'auto',
+                        flexGrow: 0
                     }}>
                         {navItems.map((item) => (
                             <Button
                                 key={item}
                                 color="inherit"
                                 sx={{
-                                    fontSize: { sm: '0.8rem', md: '0.9rem' },
+                                    fontSize: '0.9rem',
                                     whiteSpace: 'nowrap',
                                     textTransform: 'none',
-                                    fontWeight: 500
+                                    fontWeight: 500,
+                                    px: 1,
+                                    minWidth: 'auto'
                                 }}
                             >
                                 {item}
@@ -176,19 +172,22 @@ function Navbar() {
                         ))}
                     </Box>
 
-                    {/* Desktop Auth Buttons */}
+                    {/* Desktop Auth Buttons - hidden on mobile */}
                     <Box sx={{
-                        display: { xs: 'none', sm: 'flex' },
+                        display: { xs: 'none', md: 'flex' },
                         alignItems: 'center',
                         gap: 2,
-                        ml: 'auto'
+                        ml: 'auto',
+                        flexShrink: 0
                     }}>
                         <Button
                             onClick={handleLoginClick}
                             color="inherit"
                             sx={{
                                 fontSize: '0.9rem',
-                                fontWeight: 500
+                                fontWeight: 500,
+                                whiteSpace: 'nowrap',
+                                paddingRight: "60px"
                             }}
                         >
                             Login
@@ -201,52 +200,14 @@ function Navbar() {
                         </GradientButton>
                     </Box>
 
-                    {/* Mobile Auth Buttons */}
-                    <Box sx={{
-                        display: { xs: 'flex', sm: 'none' },
-                        position: 'absolute',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        gap: 1
-                    }}>
-                        <Button
-                            color="inherit"
-                            onClick={handleLoginClick}
-                            size="small"
-                            sx={{
-                                fontSize: '0.8rem',
-                                minWidth: 'auto',
-                                fontWeight: 500
-                            }}
-                        >
-                            Login
-                        </Button>
-                        <Button
-                            variant="contained"
-                            onClick={handleAccountClick}
-                            size="small"
-                            sx={{
-                                fontSize: '0.6rem',
-                                minWidth: 'auto',
-                                fontWeight: 500,
-                                background: 'linear-gradient(180deg, #844BE0 0%, #221C86 100%)',
-                                '&:hover': {
-                                    background: 'linear-gradient(180deg, #945BEF 0%, #2A2399 100%)',
-                                },
-                            }}
-                        >
-                            Create Account
-                        </Button>
-                    </Box>
-
-                    {/* Mobile Menu Button */}
+                    {/* Mobile Menu Button - shown only on mobile */}
                     <IconButton
                         size="large"
                         edge="end"
                         color="inherit"
                         aria-label="menu"
                         sx={{
-                            display: { xs: 'flex', sm: 'none' },
+                            display: { xs: 'flex', md: 'none' },
                             ml: 'auto'
                         }}
                         onClick={handleDrawerToggle}
@@ -256,7 +217,7 @@ function Navbar() {
                 </Toolbar>
             </AppBar>
 
-            {/* Drawer */}
+            {/* Mobile Drawer */}
             <Drawer
                 anchor="right"
                 variant="temporary"
@@ -266,8 +227,9 @@ function Navbar() {
                     keepMounted: true,
                 }}
                 sx={{
-                    display: { xs: 'block', sm: 'none' },
+                    display: { xs: 'block', md: 'none' },
                     '& .MuiDrawer-paper': {
+                        boxSizing: 'border-box',
                         width: '100vw',
                         background: 'rgba(8, 6, 36, 1)',
                         color: 'white'

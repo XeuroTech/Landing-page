@@ -118,6 +118,11 @@ const Course = ({
                         {valuesButtonText}
                     </Button>
                 </Box>
+                <Box
+                    component='img'
+                    src='src/assets/homepic/CourseImg.png'
+
+                />
 
                 {/* Academy Section with Image */}
                 <Box sx={{

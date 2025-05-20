@@ -14,6 +14,8 @@ import ReflectOtherApp from '../Components/MainPageCom/ReflectOtherApp.jsx'
 import Testiminols from '../Components/MainPageCom/Testiminols.jsx'
 import Footer from '../Components/MainPageCom/Footer.jsx'
 
+
+
 import Calender from '../Components/MainPageCom/Calender.jsx'
 
 
@@ -21,33 +23,21 @@ const Mainpage = () => {
     return (
         <>
             <Navbar />
-
             <AiAssistant />
-            <BrainPower />
-
-            <Meeting />
-            <ReflectOtherApp />
-
-            <Trail />
-
-            <Course />
-
-
-
-
-
             <FrictionThoughts />
             <Testiminols />
-
-
             <Calender />
-
+            <BrainPower />
+            <Meeting />
+            <ReflectOtherApp />
+            <Trail />
+            <Course />
             <Footer />
 
 
 
-            <FrictionThoughts />
-            <Testiminols />
+
+
 
 
 
@@ -61,7 +51,7 @@ const Mainpage = () => {
             <BrainPower />
             <Meeting />
             <Trail />
-            <Course />
+
             <ReflectOtherApp />
             {/* <FrictionThoughts /> */}
 
