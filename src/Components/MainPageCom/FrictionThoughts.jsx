@@ -62,6 +62,7 @@ const Scanner = styled("div")({
     top: "50%",
     left: "50%",
     width: "39%",
+    
     height: "2px",
     transformOrigin: "left center",
     transform: "rotate(0deg)",
@@ -101,7 +102,11 @@ const FrictionThoughts = () => {
       }}
     >
       <RadarBackground />
-      <Scanner />
+      <Scanner sx={{
+        width:{
+          xl:"25%"
+        }
+      }} />
 
       {/* Main Content */}
       <Box
