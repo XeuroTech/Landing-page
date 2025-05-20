@@ -1,10 +1,8 @@
-import { Box, Typography, useTheme, useMediaQuery, Button } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import React from 'react';
 import meeting from '/src/assets/homepic/meeting.png';
 
 const Meeting = () => {
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Box
