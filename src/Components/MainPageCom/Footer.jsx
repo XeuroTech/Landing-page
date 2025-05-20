@@ -1,4 +1,4 @@
-import {
+  import {
   Box,
   Button,
   styled,
@@ -123,11 +123,11 @@ const Footer = () => {
           flexDirection={{ xs: "column", lg: "row" }}
           justifyContent="space-around"
           alignItems={{ xs: "flex-start", lg: "flex-start" }}
-          maxWidth="1600px"
+          // maxWidth="1600px"
           width="100%"
           height="100%"
           mx="auto"
-          gap={{ xs: 4, lg: 12, xl: 16 }}
+          gap={{ xs: 4, lg: 12,  }}
         >
           {/* Left: Logo + Social Icons */}
           <Box
