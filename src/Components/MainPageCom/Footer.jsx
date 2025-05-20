@@ -112,7 +112,11 @@ const Footer = () => {
         py={{ xs: 4, lg: 6, xl: 8 }}
         bgcolor="#030014"
         sx={{ boxSizing: "border-box" }}
-      >
+
+        display="flex"
+        flexDirection="column"
+        justifyContent="start"
+              >
         {/* Main Footer Content */}
         <Box
           display="flex"
@@ -281,14 +285,15 @@ const Footer = () => {
           display="flex"
           flexDirection={{ xs: "column", lg: "row" }}
           justifyContent="space-around"
-          alignItems={{ xs: "flex-start", lg: "center" }}
-          maxWidth="1600px"
-          width="100%"
+          alignItems={{ xs: "flex-start", lg: "start" }}
+          // maxWidth="1600px"
+          width={{ lg:"100%" ,xl:"90%"  }}
           mx="auto"
         >
-          <Box width={{ xs: "100%", lg: "30%" }}>
+          <Box  display={"felx"} justifyContent={"start"} width={{ xs: "100%", lg: "30%" }}>
             <FooterTitle
               sx={{
+                   
                 fontSize: { xs: "18px", lg: "20px", xl: "22px" },
                 mb: 1,
               }}
@@ -371,43 +376,42 @@ const Footer = () => {
           }}
         />
 
-        {/* Bottom Links */}
-        {/* Bottom Links */}
-{/* Bottom Links */}
-{/* Bottom Links */}
-<Box
-  display="flex"
-  flexDirection={{ xs: "column", sm: "row" }}
-  justifyContent="space-between"
-  alignItems="center"
-  maxWidth="1600px"
-  // width="100%"
-  mx="auto"
-  px={{ xs: 2, sm: 4, md: 6, lg: 8, xl: 12 }}
-  gap={{ xs: 1, sm: 0 }}
->
-  <Typography
-    variant="body2"
-    sx={{
-      color: "#efedfd99",
-      fontSize: { xs: "12px", xl: "14px" },
-      textAlign: { xs: "center", sm: "left" },
-    }}
-  >
-    Reflect App, LLC. All rights reserved.
-  </Typography>
+ 
 
-  <Typography
-    variant="body2"
-    sx={{
-      color: "#efedfd99",
-      fontSize: { xs: "12px", xl: "14px" },
-      textAlign: { xs: "center", sm: "right" },
-    }}
-  >
-    Privacy Policy &nbsp; - &nbsp; Terms of Conditions
-  </Typography>
-</Box>
+  {/* Bottom Links */}
+            <Box
+              display="flex"
+              flexDirection={{ xs: "column-reverse", sm: "row" }}
+              justifyContent={{ xs: "center", sm: "space-between", xl: "space-around" }}
+              alignItems="center"
+              // maxWidth="1600px"
+              width={{xl:"80%" , lg:"90%"}}
+              mx="auto"
+              // px={{ xs: 2, sm: 4, md: 6, lg: 8, xl: 12 }}
+              gap={{ xs: 1.5, sm: 0 }}
+              textAlign={{ xs: "center", sm: "left" }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#efedfd99",
+                  fontSize: { xs: "12px", xl: "14px" },
+                }}
+              >
+                Reflect App, LLC. All rights reserved.
+              </Typography>
+
+              <Typography
+                variant="body2"
+                sx={{
+                  color: "#efedfd99",
+                  fontSize: { xs: "12px", xl: "14px" },
+                }}
+              >
+                Privacy Policy &nbsp; - &nbsp; Terms of Conditions
+              </Typography>
+            </Box>
+
 
 
 

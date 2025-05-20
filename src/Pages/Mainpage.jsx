@@ -24,9 +24,6 @@ const Mainpage = () => {
               <Footer/>
 
            
-              <Testiminols/> 
-
-                 <FrictionThoughts />
 
              
             {/* <AiAssistant /> */}
