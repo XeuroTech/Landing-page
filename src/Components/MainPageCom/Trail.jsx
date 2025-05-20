@@ -1,6 +1,6 @@
 import { Box, styled, Button, Typography } from '@mui/material';
 import React from 'react';
-import TrailImage from './Trailimage.jsx';
+import TrailImage from './TrailImage.jsx';
 
 const TrailBox = styled(Box)(({ theme }) => ({
     display: 'flex',
