@@ -287,7 +287,7 @@ const Footer = () => {
           justifyContent="space-around"
           alignItems={{ xs: "flex-start", lg: "start" }}
           // maxWidth="1600px"
-          width={{ lg:"100%" ,xl:"60%"  }}
+          width={{ lg:"100%" ,xl:"84%"  }}
           mx="auto"
         >
           <Box  display={"felx"} justifyContent={"start"} width={{ xs: "100%", lg: "30%" }}>
@@ -382,13 +382,13 @@ const Footer = () => {
             <Box
               display="flex"
               flexDirection={{ xs: "column-reverse", sm: "row" }}
-              justifyContent={{ xs: "center", sm: "space-between", xl: "space-around" }}
+              justifyContent={{ xs: "center", sm: "space-between",  xl:"space-between" }}
               alignItems="center"
-              // maxWidth="1600px"
-              width={{xl:"85%" , lg:"90%"}}
+              //  maxWidth="1600px"
+              width={{xl:"75%" , lg:"90%"}}
               mx="auto"
               // px={{ xs: 2, sm: 4, md: 6, lg: 8, xl: 12 }}
-              gap={{ xs: 1.5, sm: 0 }}
+              gap={{ xs: 1.5, sm: 0 , }}
               textAlign={{ xs: "center", sm: "left" }}
             >
               <Typography
