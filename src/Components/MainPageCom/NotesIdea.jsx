@@ -2,7 +2,7 @@ import { Box, Button, styled, Typography, useMediaQuery, useTheme } from "@mui/m
 import React from "react";
 import reflectImage from "../../assets/mainPage/refletImage.jpg";
 import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-
+import { CustomButton } from "../../../Theme/ThemeProvider";
 const NotesIdea = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm && md"));
@@ -19,17 +19,7 @@ const NotesIdea = () => {
     color: theme.palette.common.white,
   }));
 
-  const CustomButton = styled(Button)(() => ({
-    backgroundColor: "transparent",
-    border: "1px solid wheat",
-    color: "wheat",
-    borderRadius: "32px",
-    fontSize: "12px",
-    textTransform: "none",
-    "&:hover": {
-      backgroundColor: "rgba(0, 122, 255, 0.1)",
-    },
-  }));
+
 
   return (
     <Box sx={{ backgroundColor: "#030014" }}>
