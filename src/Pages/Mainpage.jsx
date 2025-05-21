@@ -9,68 +9,36 @@ import FrictionThoughts from '../Components/MainPageCom/FrictionThoughts.jsx'
 import Navbar from '../Components/NavBar.jsx'
 import Trail from '../Components/MainPageCom/Trail.jsx'
 import ReflectOtherApp from '../Components/MainPageCom/ReflectOtherApp.jsx'
-
 import Testiminols from '../Components/MainPageCom/Testiminols.jsx'
 import Footer from '../Components/MainPageCom/Footer.jsx'
-
-
-
+import CreateAccount from "../Components/CreateAccount.jsx"
 import Calender from '../Components/MainPageCom/Calender.jsx'
-
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 const Mainpage = () => {
     return (
-        <>
+        <BrowserRouter>
             <Navbar />
-            <NotesIdea />
-            <CardComponents />
-            <AiAssistant />
-            <FrictionThoughts />
-            <Testiminols />
-            <Calender />
-            <BrainPower />
-            <Meeting />
-            <ReflectOtherApp />
-            <Trail />
-            <Course />
-            <Footer />
-
-
-
-
-
-
-
-
-
-            {/* <AiAssistant /> */}
-            {/* <BrainPower />
-            <Meeting /> */}
-            {/* <CardForDetails /> */}
-
-            {/* <AiAssistant />
-            <BrainPower />
-            <Meeting />
-            <Trail />
-
-            <ReflectOtherApp />
-            {/* <FrictionThoughts /> */}
-
-
-
-            {/* <CardComponents />
-        <AiAssistant />
-        <BrainPower />
-        <Meeting />
-        <CardForDetails />
-        <FrictionThoughts /> */}
-
-
-
-
-
-
-        </>
+            <Routes>
+                <Route path='/createaccount' element={<CreateAccount />} />
+                <Route path='/' element={
+                    <>
+                        <NotesIdea />
+                        <CardComponents />
+                        <AiAssistant />
+                        <FrictionThoughts />
+                        <Testiminols />
+                        <Calender />
+                        <BrainPower />
+                        <Meeting />
+                        <ReflectOtherApp />
+                        <Trail />
+                        <Course />
+                        <Footer />
+                    </>
+                } />
+            </Routes>
+        </BrowserRouter>
     )
 }
 
