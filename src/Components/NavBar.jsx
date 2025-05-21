@@ -16,9 +16,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { styled } from "@mui/material/styles";
 import navlogo from "../assets/navlogo.png";
+import { NavLink, useNavigate } from "react-router-dom";
+
+
 function Navbar() {
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const [scrolled, setScrolled] = React.useState(false);
+    const navigate = useNavigate()
     React.useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 10);
         window.addEventListener("scroll", handleScroll);
@@ -41,7 +45,7 @@ function Navbar() {
         console.log("Login clicked");
     };
     const handleAccountClick = () => {
-        console.log("Create account clicked");
+        navigate("/createaccount")
     };
     const navItems = ["Product", "Pricing", "Company", "Blog", "Changelog"];
     const drawer = (
@@ -105,7 +109,7 @@ function Navbar() {
                     }}
                 >
                     {/* Left: Logo */}
-                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1, cursor: 'pointer' }} onClick={() => navigate('/')}>
                         <Box
                             component="img"
                             src={navlogo}
