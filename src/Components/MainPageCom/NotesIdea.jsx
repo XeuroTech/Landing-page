@@ -22,7 +22,7 @@ const NotesIdea = () => {
 
 
   return (
-    <Box sx={{ backgroundColor: "#030014", pt: 10 }}>
+    <Box sx={{ backgroundColor: "#030014", pt: 15 }}>
       <Box
         sx={{
           height: "max-content",
