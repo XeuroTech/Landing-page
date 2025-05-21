@@ -24,7 +24,7 @@ const AuthForm = () => {
         fontSize: '1rem',
         fontWeight: 600,
     }));
-    
+
     const [showPassword, setShowPassword] = React.useState(false);
     const navigate = useNavigate();
     const [formData, setFormData] = React.useState({
@@ -43,7 +43,7 @@ const AuthForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        navigate('/note');
+        navigate('/');
         // Add your form submission logic here
     };
 
@@ -77,7 +77,7 @@ const AuthForm = () => {
                         variant="h4"
                         component="h1"
                         align="center"
-                        sx={{ 
+                        sx={{
                             color: 'white',
                             mb: 1,
                             fontWeight: 700,
@@ -88,7 +88,7 @@ const AuthForm = () => {
                     </Typography>
                     <Typography
                         align="center"
-                        sx={{ 
+                        sx={{
                             mb: 4,
                             color: 'rgba(255,255,255,0.8)',
                             fontSize: { xs: '0.9rem', sm: '1rem' }
@@ -98,7 +98,7 @@ const AuthForm = () => {
                     </Typography>
 
                     <FormControl fullWidth sx={{ mb: 3 }}>
-                        <Typography sx={{ 
+                        <Typography sx={{
                             color: 'white',
                             mb: 0.5,
                             fontSize: '0.95rem',
@@ -106,8 +106,8 @@ const AuthForm = () => {
                         }}>
                             Username
                         </Typography>
-                        <Typography sx={{ 
-                            fontSize: "0.8rem", 
+                        <Typography sx={{
+                            fontSize: "0.8rem",
                             color: 'rgba(255,255,255,0.6)',
                             mb: 1.5
                         }}>
@@ -149,7 +149,7 @@ const AuthForm = () => {
                     </FormControl>
 
                     <FormControl fullWidth sx={{ mb: 3 }}>
-                        <Typography sx={{ 
+                        <Typography sx={{
                             color: 'white',
                             mb: 0.5,
                             fontSize: '0.95rem',
@@ -157,8 +157,8 @@ const AuthForm = () => {
                         }}>
                             Encryption Password
                         </Typography>
-                        <Typography sx={{ 
-                            fontSize: "0.8rem", 
+                        <Typography sx={{
+                            fontSize: "0.8rem",
                             color: 'rgba(255,255,255,0.6)',
                             mb: 1.5
                         }}>
@@ -213,7 +213,7 @@ const AuthForm = () => {
                     </FormControl>
 
                     <FormControl fullWidth sx={{ mb: 4 }}>
-                        <Typography sx={{ 
+                        <Typography sx={{
                             color: 'white',
                             mb: 0.5,
                             fontSize: '0.95rem',
@@ -221,8 +221,8 @@ const AuthForm = () => {
                         }}>
                             Confirm Encryption Password
                         </Typography>
-                        <Typography sx={{ 
-                            fontSize: "0.8rem", 
+                        <Typography sx={{
+                            fontSize: "0.8rem",
                             color: 'rgba(255,255,255,0.6)',
                             mb: 1.5
                         }}>
@@ -270,7 +270,7 @@ const AuthForm = () => {
                         variant="contained"
                         fullWidth
                         size="large"
-                        sx={{ 
+                        sx={{
                             py: 1.75,
                             fontSize: '1rem',
                             borderRadius: 1
